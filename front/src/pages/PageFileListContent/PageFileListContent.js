@@ -49,9 +49,9 @@ const BreadCrumbs = compose(
   BreadCrumbsBorderB
 )(BreadCrumbsBase)
 
-const BranchInfoInfo = compose(
+const BranchInfo = compose(
   BranchInfoBorderBottom
-)(BranchInfoInfoBase)
+)(BranchInfoBase)
 
 const headerMock = [
     'name',
