@@ -1,4 +1,5 @@
 import React from 'react';
+import { compose } from '@bem-react/core';
 import BranchInfo from "../../components/BranchInfo/BranchInfo";
 import LayoutContainer from "../../components/Layout/-Container/Layout-Container";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
@@ -11,10 +12,17 @@ import BranchInfoInfo from "../../components/BranchInfo/-Info/BranchInfo-Info";
 import TabsItem from "../../components/Tabs/-Item/Tabs-Item";
 import Tabs from "../../components/Tabs/Tabs";
 import Layout from "../../components/Layout/Layout";
-import Theme from "../../components/Theme/Theme";
+import ThemeBase from "../../components/Theme/Theme";
+import {ThemeColorProjectDefault} from "../../components/Theme/_color/Theme_color_project-default";
+
+const Theme = compose(
+  ThemeColorProjectDefault
+)(ThemeBase);
+
+// <Theme space='default' size='default' color='project-default' gap='small' font='default'>
 
 const PageFileListContent = () => (
-  <Theme space='default' size='default' color='project-default' gap='small' font='default'>
+    <Theme color='project-default'>
     <Layout>
       <header/>
       <LayoutContainer grow='true'>

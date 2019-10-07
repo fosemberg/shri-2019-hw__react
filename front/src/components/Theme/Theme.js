@@ -1,8 +1,11 @@
 import React from 'react';
 import './Theme.scss';
+import {cn} from "@bem-react/classname";
 
-const Theme = (props) => (
-  <div className="Theme">{props.children}</div>
+export const cnTheme = cn('Theme');
+
+const Theme = ({className, children}) => (
+  <div className={cnTheme({}, [className])}>{children}</div>
 );
 
 export default Theme;
