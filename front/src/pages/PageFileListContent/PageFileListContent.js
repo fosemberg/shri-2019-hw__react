@@ -66,11 +66,7 @@ const PageFileListContent = () => (
     <Layout>
       <Header/>
       <LayoutContainer grow>
-        <BreadCrumbs borderB>
-          <BreadCrumbsItem>
-            arcadia
-          </BreadCrumbsItem>
-        </BreadCrumbs>
+        <BreadCrumbs borderB/>
         <BranchInfo border='bottom'>
           <BranchInfoHeader>
             <BranchInfoName>

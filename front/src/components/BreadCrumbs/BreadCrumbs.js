@@ -6,11 +6,11 @@ import BreadCrumbsItem from "./-Item/BreadCrumbs-Item";
 
 export const cnBreadCrumbs = cn('BreadCrumbs');
 
-const BreadCrumbs = () =>
+const BreadCrumbs = ({className}) =>
     <Route
         path="*"
         render={({location: {pathname}}) =>
-            <div className={cnBreadCrumbs()}>
+            <div className={cnBreadCrumbs({}, [className])}>
                 {
                     pathname
                         .split("/")
