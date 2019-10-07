@@ -5,7 +5,7 @@ import './Table-Head.scss';
 export const cnTableHead = cn('Table-Head');
 
 const TableHead = ({className, children}) => (
-  <div className={cnTableHead({}, [className])}>{children}</div>
+  <thead className={cnTableHead({}, [className])}>{children}</thead>
 );
 
 export default TableHead;

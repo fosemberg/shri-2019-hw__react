@@ -1,6 +1,6 @@
 import React from 'react';
 import {compose} from '@bem-react/core';
-import BranchInfo from "../../components/BranchInfo/BranchInfo";
+import BranchInfoBase from "../../components/BranchInfo/BranchInfo";
 import LayoutContainerBase from "../../components/Layout/-Container/Layout-Container";
 import BreadCrumbsBase from "../../components/BreadCrumbs/BreadCrumbs";
 import BreadCrumbsItem from "../../components/BreadCrumbs/-Item/BreadCrumbs-Item";
@@ -24,6 +24,11 @@ import {LayoutContainerGrow} from "../../components/Layout/-Container/_grow/Layo
 import Link from "../../components/Link/Link";
 import User from "../../components/User/User";
 import Footer from "../../components/Footer/Footer";
+import TableRow from "../../components/Table/-Row/Table-Row";
+import TableCell from "../../components/Table/-Cell/Table-Cell";
+import TableHead from "../../components/Table/-Head/Table-Head";
+import Table from "../../components/Table/Table";
+import {BranchInfoBorderBottom} from "../../components/BranchInfo/_border/BranchInfo_border_bottom";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -43,6 +48,18 @@ const TabsItem = compose(
 const BreadCrumbs = compose(
   BreadCrumbsBorderB
 )(BreadCrumbsBase)
+
+const BranchInfoInfo = compose(
+  BranchInfoBorderBottom
+)(BranchInfoInfoBase)
+
+const headerMock = [
+    'name',
+    'Last commit',
+    'Commit message',
+    'Committer',
+    'Updated'
+]
 
 const PageFileListContent = () => (
   <Theme space='default' size='default' color='project-default' gap='small' font='default'>
@@ -85,12 +102,16 @@ trunk
             </TabsItem>
           </Tabs>
         </BranchInfo>
-        <table hide='touch'>
-          <thead>
-          <tr/>
-          </thead>
+        <Table hide='touch'>
+          <TableHead>
+          <TableRow>
+            {headerMock.map(headerName =>
+              <TableCell key={headerName}>{headerName}</TableCell>
+            )}
+          </TableRow>
+          </TableHead>
           <tbody mix={{'block': 'desktop-files'}}/>
-        </table>
+        </Table>
       </LayoutContainer>
       <Footer/>
     </Layout>

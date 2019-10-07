@@ -5,7 +5,7 @@ import './Table-Row.scss';
 export const cnTableRow = cn('Table-Row');
 
 const TableRow = ({className, children}) => (
-  <div className={cnTableRow({}, [className])}>{children}</div>
+  <tr className={cnTableRow({}, [className])}>{children}</tr>
 );
 
 export default TableRow;

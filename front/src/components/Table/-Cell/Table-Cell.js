@@ -5,7 +5,7 @@ import './Table-Cell.scss';
 export const cnTableCell = cn('Table-Cell');
 
 const TableCell = ({className, children}) => (
-  <div className={cnTableCell({}, [className])}>{children}</div>
+  <td className={cnTableCell({}, [className])}>{children}</td>
 );
 
 export default TableCell;

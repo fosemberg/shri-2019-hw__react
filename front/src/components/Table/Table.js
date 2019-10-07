@@ -5,7 +5,7 @@ import './Table.scss';
 export const cnTable = cn('Table');
 
 const Table = ({className, children}) => (
-  <div className={cnTable({}, [className])}>{children}</div>
+  <table className={cnTable({}, [className])}>{children}</table>
 );
 
 export default Table;
