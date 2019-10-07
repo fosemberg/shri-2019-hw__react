@@ -1,4 +1,4 @@
 import { withBemMod } from '@bem-react/core';
 import './Editor-Row_color_added.scss';
 
-export const EditorRowColorAdded = withBemMod('Editor', { color: 'added'})
+export const EditorRowColorAdded = withBemMod('Editor-Row', { color: 'added'})

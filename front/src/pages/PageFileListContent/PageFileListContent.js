@@ -9,7 +9,7 @@ import BranchInfoName from "../../components/BranchInfo/-Name/BranchInfo-Name";
 import BranchInfoSelect from "../../components/BranchInfo/-Select/BranchInfo-Select";
 import BranchInfoSearch from "../../components/BranchInfo/-Search/BranchInfo-Search";
 import BranchInfoInfo from "../../components/BranchInfo/-Info/BranchInfo-Info";
-import TabsItem from "../../components/Tabs/-Item/Tabs-Item";
+import TabsItemBase from "../../components/Tabs/-Item/Tabs-Item";
 import Tabs from "../../components/Tabs/Tabs";
 import Layout from "../../components/Layout/Layout";
 import ThemeBase from "../../components/Theme/Theme";
@@ -18,6 +18,7 @@ import {ThemeSpaceDefault} from "../../components/Theme/_space/Theme_space_defau
 import {ThemeSizeDefault} from "../../components/Theme/_size/Theme_size_default";
 import {ThemeGapSmall} from "../../components/Theme/_gap/Theme_gap_small";
 import {LayoutContainerGrowTrue} from "../../components/Layout/-Container/_grow/Layout-Container_grow_true";
+import {TabsItemStateActive} from "../../components/Tabs/-Item/_state/Tabs-Item_state_active";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -29,6 +30,10 @@ const Theme = compose(
 const LayoutContainer = compose(
   LayoutContainerGrowTrue
 )(LayoutContainerBase)
+
+const TabsItem = compose(
+  TabsItemStateActive
+)(TabsItemBase)
 
 const PageFileListContent = () => (
     <Theme space='default' size='default' color='project-default' gap='small' font='default'>
