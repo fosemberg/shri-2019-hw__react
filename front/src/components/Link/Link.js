@@ -5,7 +5,7 @@ import './Link.scss';
 export const cnLink = cn('Link');
 
 const Link = ({className, children}) => (
-  <div className={cnLink({}, [className])}>{children}</div>
+  <a className={cnLink({}, [className])}>{children}</a>
 );
 
 export default Link;

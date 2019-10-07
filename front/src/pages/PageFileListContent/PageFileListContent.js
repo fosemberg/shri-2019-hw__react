@@ -1,8 +1,8 @@
 import React from 'react';
-import { compose } from '@bem-react/core';
+import {compose} from '@bem-react/core';
 import BranchInfo from "../../components/BranchInfo/BranchInfo";
 import LayoutContainerBase from "../../components/Layout/-Container/Layout-Container";
-import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
+import BreadCrumbsBase from "../../components/BreadCrumbs/BreadCrumbs";
 import BreadCrumbsItem from "../../components/BreadCrumbs/-Item/BreadCrumbs-Item";
 import BranchInfoHeader from "../../components/BranchInfo/-Header/BranchInfo-Header";
 import BranchInfoName from "../../components/BranchInfo/-Name/BranchInfo-Name";
@@ -17,9 +17,12 @@ import {ThemeColorProjectDefault} from "../../components/Theme/_color/Theme_colo
 import {ThemeSpaceDefault} from "../../components/Theme/_space/Theme_space_default";
 import {ThemeSizeDefault} from "../../components/Theme/_size/Theme_size_default";
 import {ThemeGapSmall} from "../../components/Theme/_gap/Theme_gap_small";
-import {LayoutContainerGrowTrue} from "../../components/Layout/-Container/_grow/Layout-Container_grow_true";
 import {TabsItemStateActive} from "../../components/Tabs/-Item/_state/Tabs-Item_state_active";
 import Header from "../../components/Header/Header";
+import {BreadCrumbsBorderB} from "../../components/BreadCrumbs/_border-b/BreadCrumbs_border-b";
+import {LayoutContainerGrow} from "../../components/Layout/-Container/_grow/Layout-Container_grow";
+import Link from "../../components/Link/Link";
+import User from "../../components/User/User";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -29,19 +32,23 @@ const Theme = compose(
 )(ThemeBase);
 
 const LayoutContainer = compose(
-  LayoutContainerGrowTrue
+  LayoutContainerGrow
 )(LayoutContainerBase)
 
 const TabsItem = compose(
   TabsItemStateActive
 )(TabsItemBase)
 
+const BreadCrumbs = compose(
+  BreadCrumbsBorderB
+)(BreadCrumbsBase)
+
 const PageFileListContent = () => (
-    <Theme space='default' size='default' color='project-default' gap='small' font='default'>
+  <Theme space='default' size='default' color='project-default' gap='small' font='default'>
     <Layout>
       <Header/>
-      <LayoutContainer grow='true'>
-        <BreadCrumbs borderB={true}>
+      <LayoutContainer grow>
+        <BreadCrumbs borderB>
           <BreadCrumbsItem>
             arcadia
           </BreadCrumbsItem>
@@ -62,17 +69,11 @@ trunk
           </BranchInfoHeader>
           <BranchInfoInfo>
             {' Last commit '}
-            <a attrs={{'href': '#'}}>
-              c4d248
-            </a>
+            <Link>c4d248</Link>
             {' on '}
-            <a attrs={{'href': '#'}}>
-              20 Oct 2017, 12:24
-            </a>
+            <Link>20 Oct 2017, 12:24</Link>
             {' by '}
-            <span>
-robot-srch-releaser
-</span>
+            <User>robot-srch-releaser</User>
           </BranchInfoInfo>
           <Tabs>
             <TabsItem state='active'>
