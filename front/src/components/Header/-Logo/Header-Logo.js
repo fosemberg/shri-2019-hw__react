@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Header-Logo.scss';
 
-const HeaderLogo = (props) => (
-  <div className="Header-Logo">{props.children}</div>
+export const cnHeaderLogo = cn('HeaderLogo');
+
+const HeaderLogo = ({className, children}) => (
+  <div className={cnHeaderLogo({}, [className])}>{children}</div>
 );
 
 export default HeaderLogo;

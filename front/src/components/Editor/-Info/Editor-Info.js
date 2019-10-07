@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-Info.scss';
 
-const EditorInfo = (props) => (
-  <div className="Editor-Info">{props.children}</div>
+export const cnEditorInfo = cn('EditorInfo');
+
+const EditorInfo = ({className, children}) => (
+  <div className={cnEditorInfo({}, [className])}>{children}</div>
 );
 
 export default EditorInfo;

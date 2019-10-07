@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Footer-Version.scss';
 
-const FooterVersion = (props) => (
-  <div className="Footer-Version">{props.children}</div>
+export const cnFooterVersion = cn('FooterVersion');
+
+const FooterVersion = ({className, children}) => (
+  <div className={cnFooterVersion({}, [className])}>{children}</div>
 );
 
 export default FooterVersion;

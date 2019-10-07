@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-ByteCount.scss';
 
-const EditorByteCount = (props) => (
-  <div className="Editor-ByteCount">{props.children}</div>
+export const cnEditorByteCount = cn('EditorByteCount');
+
+const EditorByteCount = ({className, children}) => (
+  <div className={cnEditorByteCount({}, [className])}>{children}</div>
 );
 
 export default EditorByteCount;

@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Layout-Container.scss';
 
-const LayoutContainer = (props) => (
-  <div className="Layout-Container">{props.children}</div>
+export const cnLayoutContainer = cn('LayoutContainer');
+
+const LayoutContainer = ({className, children}) => (
+  <div className={cnLayoutContainer({}, [className])}>{children}</div>
 );
 
 export default LayoutContainer;

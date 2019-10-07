@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-Row.scss';
 
-const EditorRow = (props) => (
-  <div className="Editor-Row">{props.children}</div>
+export const cnEditorRow = cn('EditorRow');
+
+const EditorRow = ({className, children}) => (
+  <div className={cnEditorRow({}, [className])}>{children}</div>
 );
 
 export default EditorRow;

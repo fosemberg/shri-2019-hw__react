@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-HeaderParagraph.scss';
 
-const EditorHeaderParagraph = (props) => (
-  <div className="Editor-HeaderParagraph">{props.children}</div>
+export const cnEditorHeaderParagraph = cn('EditorHeaderParagraph');
+
+const EditorHeaderParagraph = ({className, children}) => (
+  <div className={cnEditorHeaderParagraph({}, [className])}>{children}</div>
 );
 
 export default EditorHeaderParagraph;

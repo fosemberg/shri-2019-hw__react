@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Select-Name.scss';
 
-const SelectName = (props) => (
-  <div className="Select-Name">{props.children}</div>
+export const cnSelectName = cn('SelectName');
+
+const SelectName = ({className, children}) => (
+  <div className={cnSelectName({}, [className])}>{children}</div>
 );
 
 export default SelectName;

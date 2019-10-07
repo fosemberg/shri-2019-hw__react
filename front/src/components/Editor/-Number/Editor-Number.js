@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-Number.scss';
 
-const EditorNumber = (props) => (
-  <div className="Editor-Number">{props.children}</div>
+export const cnEditorNumber = cn('EditorNumber');
+
+const EditorNumber = ({className, children}) => (
+  <div className={cnEditorNumber({}, [className])}>{children}</div>
 );
 
 export default EditorNumber;

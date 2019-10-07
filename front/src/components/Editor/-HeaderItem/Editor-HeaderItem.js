@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-HeaderItem.scss';
 
-const EditorHeaderItem = (props) => (
-  <div className="Editor-HeaderItem">{props.children}</div>
+export const cnEditorHeaderItem = cn('EditorHeaderItem');
+
+const EditorHeaderItem = ({className, children}) => (
+  <div className={cnEditorHeaderItem({}, [className])}>{children}</div>
 );
 
 export default EditorHeaderItem;

@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './GitLogRow-Item.scss';
 
-const GitLogRowItem = (props) => (
-  <div className="GitLogRow-Item">{props.children}</div>
+export const cnGitLogRowItem = cn('GitLogRowItem');
+
+const GitLogRowItem = ({className, children}) => (
+  <div className={cnGitLogRowItem({}, [className])}>{children}</div>
 );
 
 export default GitLogRowItem;

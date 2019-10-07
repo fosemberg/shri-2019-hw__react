@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './BreadCrumbs-Slash.scss';
 
-const BreadCrumbsSlash = (props) => (
-  <div className="BreadCrumbs-Slash">{props.children}</div>
+export const cnBreadCrumbsSlash = cn('BreadCrumbsSlash');
+
+const BreadCrumbsSlash = ({className, children}) => (
+  <div className={cnBreadCrumbsSlash({}, [className])}>{children}</div>
 );
 
 export default BreadCrumbsSlash;

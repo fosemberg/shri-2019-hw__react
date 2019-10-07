@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './BranchInfo-Search.scss';
 
-const BranchInfoSearch = (props) => (
-  <div className="BranchInfo-Search">{props.children}</div>
+export const cnBranchInfoSearch = cn('BranchInfoSearch');
+
+const BranchInfoSearch = ({className, children}) => (
+  <div className={cnBranchInfoSearch({}, [className])}>{children}</div>
 );
 
 export default BranchInfoSearch;

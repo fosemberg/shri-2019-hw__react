@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Button-Text.scss';
 
-const ButtonText = (props) => (
-  <div className="Button-Text">{props.children}</div>
+export const cnButtonText = cn('ButtonText');
+
+const ButtonText = ({className, children}) => (
+  <div className={cnButtonText({}, [className])}>{children}</div>
 );
 
 export default ButtonText;

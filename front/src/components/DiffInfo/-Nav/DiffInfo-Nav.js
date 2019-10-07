@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './DiffInfo-Nav.scss';
 
-const DiffInfoNav = (props) => (
-  <div className="DiffInfo-Nav">{props.children}</div>
+export const cnDiffInfoNav = cn('DiffInfoNav');
+
+const DiffInfoNav = ({className, children}) => (
+  <div className={cnDiffInfoNav({}, [className])}>{children}</div>
 );
 
 export default DiffInfoNav;

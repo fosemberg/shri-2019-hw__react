@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Editor-Body.scss';
 
-const EditorBody = (props) => (
-  <div className="Editor-Body">{props.children}</div>
+export const cnEditorBody = cn('EditorBody');
+
+const EditorBody = ({className, children}) => (
+  <div className={cnEditorBody({}, [className])}>{children}</div>
 );
 
 export default EditorBody;
