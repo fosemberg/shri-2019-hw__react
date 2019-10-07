@@ -19,6 +19,7 @@ import {ThemeSizeDefault} from "../../components/Theme/_size/Theme_size_default"
 import {ThemeGapSmall} from "../../components/Theme/_gap/Theme_gap_small";
 import {LayoutContainerGrowTrue} from "../../components/Layout/-Container/_grow/Layout-Container_grow_true";
 import {TabsItemStateActive} from "../../components/Tabs/-Item/_state/Tabs-Item_state_active";
+import Header from "../../components/Header/Header";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -38,7 +39,7 @@ const TabsItem = compose(
 const PageFileListContent = () => (
     <Theme space='default' size='default' color='project-default' gap='small' font='default'>
     <Layout>
-      <header/>
+      <Header/>
       <LayoutContainer grow='true'>
         <BreadCrumbs borderB={true}>
           <BreadCrumbsItem>

@@ -5,7 +5,7 @@ import './Select-Name.scss';
 export const cnSelectName = cn('Select-Name');
 
 const SelectName = ({className, children}) => (
-  <div className={cnSelectName({}, [className])}>{children}</div>
+  <span className={cnSelectName({}, [className])}>{children}</span>
 );
 
 export default SelectName;

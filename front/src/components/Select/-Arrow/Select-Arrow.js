@@ -5,7 +5,7 @@ import './Select-Arrow.scss';
 export const cnSelectArrow = cn('Select-Arrow');
 
 const SelectArrow = ({className, children}) => (
-  <div className={cnSelectArrow({}, [className])}>{children}</div>
+  <i className={cnSelectArrow({}, [className])}>{children}</i>
 );
 
 export default SelectArrow;
