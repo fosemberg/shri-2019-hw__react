@@ -29,8 +29,8 @@ const Header = ({className, children}) => (
   <div className={cnHeader({}, [className])}>
     <HeaderLogo/>
     <HeaderSelect className={cnSelect()}>
-      <SelectName>Repository</SelectName>
-      Arc
+      <SelectName weight='bold'>Repository</SelectName>
+      <SelectName>Arc</SelectName>
       <SelectArrow className={cnArrow({state: 'down'})} position='center'/>
     </HeaderSelect>
   </div>
