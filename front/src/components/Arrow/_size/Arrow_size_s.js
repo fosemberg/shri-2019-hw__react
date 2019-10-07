@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Arrow_size_s.scss';
 
-const Arrow_size_s = (props) => (
-  <div className="Arrow_size_s">{props.children}</div>
-);
-
-export default Arrow_size_s;
+export const ArrowSizeS = withBemMod('Arrow', { size: 's'})

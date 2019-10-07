@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './DiffInfo_color_ghost.scss';
 
-const DiffInfo_color_ghost = (props) => (
-  <div className="DiffInfo_color_ghost">{props.children}</div>
-);
-
-export default DiffInfo_color_ghost;
+export const DiffInfoColorGhost = withBemMod('DiffInfo', { color: 'ghost'})

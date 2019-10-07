@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Select_size_big.scss';
 
-const Select_size_big = (props) => (
-  <div className="Select_size_big">{props.children}</div>
-);
-
-export default Select_size_big;
+export const SelectSizeBig = withBemMod('Select', { size: 'big'})

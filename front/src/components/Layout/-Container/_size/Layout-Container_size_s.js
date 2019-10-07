@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Layout-Container_size_s.scss';
 
-const LayoutContainer_size_s = (props) => (
-  <div className="Layout-Container_size_s">{props.children}</div>
-);
-
-export default LayoutContainer_size_s;
+export const LayoutContainerSizeS = withBemMod('Layout', { size: 's'})

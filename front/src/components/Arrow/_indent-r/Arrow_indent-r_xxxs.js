@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Arrow_indent-r_xxxs.scss';
 
-const Arrow_indentR_xxxs = (props) => (
-  <div className="Arrow_indent-r_xxxs">{props.children}</div>
-);
-
-export default Arrow_indentR_xxxs;
+export const ArrowIndentRXxxs = withBemMod('Arrow', { indent-r: 'xxxs'})

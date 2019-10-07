@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Arrow.scss';
 
-const Arrow = (props) => (
-  <div className="Arrow">{props.children}</div>
+export const cnArrow = cn('Arrow');
+
+const Arrow = ({className, children}) => (
+  <div className={cnArrow({}, [className])}>{children}</div>
 );
 
 export default Arrow;

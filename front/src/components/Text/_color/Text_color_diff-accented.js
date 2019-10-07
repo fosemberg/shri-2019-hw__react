@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Text_color_diff-accented.scss';
 
-const Text_color_diffAccented = (props) => (
-  <div className="Text_color_diff-accented">{props.children}</div>
-);
-
-export default Text_color_diffAccented;
+export const TextColorDiffAccented = withBemMod('Text', { color: 'diff-accented'})

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './File-Icon_type_dir.scss';
 
-const FileIcon_type_dir = (props) => (
-  <div className="File-Icon_type_dir">{props.children}</div>
-);
-
-export default FileIcon_type_dir;
+export const FileIconTypeDir = withBemMod('File', { type: 'dir'})

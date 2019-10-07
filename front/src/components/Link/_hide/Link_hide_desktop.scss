@@ -1,5 +1,5 @@
 .Link {
-  &.hide_desktop {
+  &_hide_desktop {
         display: none;
         @media screen and (max-width: 600px) {
             display: flex;

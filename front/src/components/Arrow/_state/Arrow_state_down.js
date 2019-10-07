@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Arrow_state_down.scss';
 
-const Arrow_state_down = (props) => (
-  <div className="Arrow_state_down">{props.children}</div>
-);
-
-export default Arrow_state_down;
+export const ArrowStateDown = withBemMod('Arrow', { state: 'down'})

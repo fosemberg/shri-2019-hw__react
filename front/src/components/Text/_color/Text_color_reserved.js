@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Text_color_reserved.scss';
 
-const Text_color_reserved = (props) => (
-  <div className="Text_color_reserved">{props.children}</div>
-);
-
-export default Text_color_reserved;
+export const TextColorReserved = withBemMod('Text', { color: 'reserved'})

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Section_indent-b_xxxxl.scss';
 
-const Section_indentB_xxxxl = (props) => (
-  <div className="Section_indent-b_xxxxl">{props.children}</div>
-);
-
-export default Section_indentB_xxxxl;
+export const SectionIndentBXxxxl = withBemMod('Section', { indent-b: 'xxxxl'})

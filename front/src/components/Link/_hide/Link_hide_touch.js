@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Link_hide_touch.scss';
 
-const Link_hide_touch = (props) => (
-  <div className="Link_hide_touch">{props.children}</div>
-);
-
-export default Link_hide_touch;
+export const LinkHideTouch = withBemMod('Link', { hide: 'touch'})

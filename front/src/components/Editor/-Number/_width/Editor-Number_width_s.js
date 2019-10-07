@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Editor-Number_width_s.scss';
 
-const EditorNumber_width_s = (props) => (
-  <div className="Editor-Number_width_s">{props.children}</div>
-);
-
-export default EditorNumber_width_s;
+export const EditorNumberWidthS = withBemMod('Editor', { width: 's'})

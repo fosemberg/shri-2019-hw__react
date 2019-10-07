@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Editor_border_ghost.scss';
 
-const Editor_border_ghost = (props) => (
-  <div className="Editor_border_ghost">{props.children}</div>
-);
-
-export default Editor_border_ghost;
+export const EditorBorderGhost = withBemMod('Editor', { border: 'ghost'})

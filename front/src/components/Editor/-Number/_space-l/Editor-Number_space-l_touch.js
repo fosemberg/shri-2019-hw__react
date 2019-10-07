@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Editor-Number_space-l_touch.scss';
 
-const EditorNumber_spaceL_touch = (props) => (
-  <div className="Editor-Number_space-l_touch">{props.children}</div>
-);
-
-export default EditorNumber_spaceL_touch;
+export const EditorNumberSpaceLTouch = withBemMod('Editor', { space-l: 'touch'})

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Table_hide_touch.scss';
 
-const Table_hide_touch = (props) => (
-  <div className="Table_hide_touch">{props.children}</div>
-);
-
-export default Table_hide_touch;
+export const TableHideTouch = withBemMod('Table', { hide: 'touch'})

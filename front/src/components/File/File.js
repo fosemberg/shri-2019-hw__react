@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './File.scss';
 
-const File = (props) => (
-  <div className="File">{props.children}</div>
+export const cnFile = cn('File');
+
+const File = ({className, children}) => (
+  <div className={cnFile({}, [className])}>{children}</div>
 );
 
 export default File;

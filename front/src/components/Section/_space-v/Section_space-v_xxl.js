@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Section_space-v_xxl.scss';
 
-const Section_spaceV_xxl = (props) => (
-  <div className="Section_space-v_xxl">{props.children}</div>
-);
-
-export default Section_spaceV_xxl;
+export const SectionSpaceVXxl = withBemMod('Section', { space-v: 'xxl'})

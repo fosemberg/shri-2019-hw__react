@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Layout-Container_space-v_xxxxxl.scss';
 
-const LayoutContainer_spaceV_xxxxxl = (props) => (
-  <div className="Layout-Container_space-v_xxxxxl">{props.children}</div>
-);
-
-export default LayoutContainer_spaceV_xxxxxl;
+export const LayoutContainerSpaceVXxxxxl = withBemMod('Layout', { space-v: 'xxxxxl'})

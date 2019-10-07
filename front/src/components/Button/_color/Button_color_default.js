@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Button_color_default.scss';
 
-const Button_color_default = (props) => (
-  <div className="Button_color_default">{props.children}</div>
-);
-
-export default Button_color_default;
+export const ButtonColorDefault = withBemMod('Button', { color: 'default'})

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Icon_type_arrow-up.scss';
 
-const Icon_type_arrowUp = (props) => (
-  <div className="Icon_type_arrow-up">{props.children}</div>
-);
-
-export default Icon_type_arrowUp;
+export const IconTypeArrowUp = withBemMod('Icon', { type: 'arrow-up'})

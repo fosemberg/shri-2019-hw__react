@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Burger.scss';
 
-const Burger = (props) => (
-  <div className="Burger">{props.children}</div>
+export const cnBurger = cn('Burger');
+
+const Burger = ({className, children}) => (
+  <div className={cnBurger({}, [className])}>{children}</div>
 );
 
 export default Burger;

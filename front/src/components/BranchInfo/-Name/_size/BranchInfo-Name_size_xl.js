@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './BranchInfo-Name_size_xl.scss';
 
-const BranchInfoName_size_xl = (props) => (
-  <div className="BranchInfo-Name_size_xl">{props.children}</div>
-);
-
-export default BranchInfoName_size_xl;
+export const BranchInfoNameSizeXl = withBemMod('BranchInfo', { size: 'xl'})

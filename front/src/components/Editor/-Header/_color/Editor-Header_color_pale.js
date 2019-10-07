@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Editor-Header_color_pale.scss';
 
-const EditorHeader_color_pale = (props) => (
-  <div className="Editor-Header_color_pale">{props.children}</div>
-);
-
-export default EditorHeader_color_pale;
+export const EditorHeaderColorPale = withBemMod('Editor', { color: 'pale'})

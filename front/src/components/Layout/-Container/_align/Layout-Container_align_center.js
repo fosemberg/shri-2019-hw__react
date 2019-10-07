@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Layout-Container_align_center.scss';
 
-const LayoutContainer_align_center = (props) => (
-  <div className="Layout-Container_align_center">{props.children}</div>
-);
-
-export default LayoutContainer_align_center;
+export const LayoutContainerAlignCenter = withBemMod('Layout', { align: 'center'})

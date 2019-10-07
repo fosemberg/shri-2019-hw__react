@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Layout-Container_grow_true.scss';
 
-const LayoutContainer_grow_true = (props) => (
-  <div className="Layout-Container_grow_true">{props.children}</div>
-);
-
-export default LayoutContainer_grow_true;
+export const LayoutContainerGrowTrue = withBemMod('Layout', { grow: 'true'})

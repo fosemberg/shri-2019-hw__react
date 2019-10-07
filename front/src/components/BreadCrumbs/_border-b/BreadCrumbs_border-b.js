@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './BreadCrumbs_border-b.scss';
 
-const BreadCrumbs_borderB = (props) => (
-  <div className="BreadCrumbs_border-b">{props.children}</div>
-);
-
-export default BreadCrumbs_borderB;
+export const BreadCrumbsBorderB = withBemMod('BreadCrumbs', { border-b: 'undefined'})

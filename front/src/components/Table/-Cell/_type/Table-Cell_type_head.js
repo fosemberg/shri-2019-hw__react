@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Table-Cell_type_head.scss';
 
-const TableCell_type_head = (props) => (
-  <div className="Table-Cell_type_head">{props.children}</div>
-);
-
-export default TableCell_type_head;
+export const TableCellTypeHead = withBemMod('Table', { type: 'head'})

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Layout-Container_indent-b_xxxxl.scss';
 
-const LayoutContainer_indentB_xxxxl = (props) => (
-  <div className="Layout-Container_indent-b_xxxxl">{props.children}</div>
-);
-
-export default LayoutContainer_indentB_xxxxl;
+export const LayoutContainerIndentBXxxxl = withBemMod('Layout', { indent-b: 'xxxxl'})

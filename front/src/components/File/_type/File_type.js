@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './File_type.scss';
 
-const File_type = (props) => (
-  <div className="File_type">{props.children}</div>
-);
-
-export default File_type;
+export const FileType = withBemMod('File', { type: 'undefined'})

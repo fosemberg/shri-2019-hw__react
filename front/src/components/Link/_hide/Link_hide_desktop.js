@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Link_hide_desktop.scss';
 
-const Link_hide_desktop = (props) => (
-  <div className="Link_hide_desktop">{props.children}</div>
-);
-
-export default Link_hide_desktop;
+export const LinkHideDesktop = withBemMod('Link', { hide: 'desktop'})

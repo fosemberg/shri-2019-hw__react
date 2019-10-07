@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Theme_gap_small.scss';
 
-const Theme_gap_small = (props) => (
-  <div className="Theme_gap_small">{props.children}</div>
-);
-
-export default Theme_gap_small;
+export const ThemeGapSmall = withBemMod('Theme', { gap: 'small'})

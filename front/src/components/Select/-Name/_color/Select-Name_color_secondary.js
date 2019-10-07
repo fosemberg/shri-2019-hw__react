@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Select-Name_color_secondary.scss';
 
-const SelectName_color_secondary = (props) => (
-  <div className="Select-Name_color_secondary">{props.children}</div>
-);
-
-export default SelectName_color_secondary;
+export const SelectNameColorSecondary = withBemMod('Select', { color: 'secondary'})

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Editor-Item_weight_bold.scss';
 
-const EditorItem_weight_bold = (props) => (
-  <div className="Editor-Item_weight_bold">{props.children}</div>
-);
-
-export default EditorItem_weight_bold;
+export const EditorItemWeightBold = withBemMod('Editor', { weight: 'bold'})

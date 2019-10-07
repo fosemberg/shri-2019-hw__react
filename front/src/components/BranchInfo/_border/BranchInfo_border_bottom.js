@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './BranchInfo_border_bottom.scss';
 
-const BranchInfo_border_bottom = (props) => (
-  <div className="BranchInfo_border_bottom">{props.children}</div>
-);
-
-export default BranchInfo_border_bottom;
+export const BranchInfoBorderBottom = withBemMod('BranchInfo', { border: 'bottom'})

@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './User.scss';
 
-const User = (props) => (
-  <div className="User">{props.children}</div>
+export const cnUser = cn('User');
+
+const User = ({className, children}) => (
+  <div className={cnUser({}, [className])}>{children}</div>
 );
 
 export default User;

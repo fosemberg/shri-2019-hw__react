@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Arrow_state_left.scss';
 
-const Arrow_state_left = (props) => (
-  <div className="Arrow_state_left">{props.children}</div>
-);
-
-export default Arrow_state_left;
+export const ArrowStateLeft = withBemMod('Arrow', { state: 'left'})

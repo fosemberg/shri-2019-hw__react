@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Button_width_full.scss';
 
-const Button_width_full = (props) => (
-  <div className="Button_width_full">{props.children}</div>
-);
-
-export default Button_width_full;
+export const ButtonWidthFull = withBemMod('Button', { width: 'full'})

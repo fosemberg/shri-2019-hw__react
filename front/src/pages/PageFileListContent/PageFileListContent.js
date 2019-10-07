@@ -14,15 +14,21 @@ import Tabs from "../../components/Tabs/Tabs";
 import Layout from "../../components/Layout/Layout";
 import ThemeBase from "../../components/Theme/Theme";
 import {ThemeColorProjectDefault} from "../../components/Theme/_color/Theme_color_project-default";
+import {ThemeSpaceDefault} from "../../components/Theme/_space/Theme_space_default";
+import {ThemeSizeDefault} from "../../components/Theme/_size/Theme_size_default";
+import {ThemeGapSmall} from "../../components/Theme/_gap/Theme_gap_small";
 
 const Theme = compose(
-  ThemeColorProjectDefault
+  ThemeSpaceDefault,
+  ThemeSizeDefault,
+  ThemeColorProjectDefault,
+  ThemeGapSmall
 )(ThemeBase);
 
-// <Theme space='default' size='default' color='project-default' gap='small' font='default'>
+
 
 const PageFileListContent = () => (
-    <Theme color='project-default'>
+    <Theme space='default' size='default' color='project-default' gap='small' font='default'>
     <Layout>
       <header/>
       <LayoutContainer grow='true'>

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './BranchInfo-Info_no-space-b_touch.scss';
 
-const BranchInfoInfo_noSpaceB_touch = (props) => (
-  <div className="BranchInfo-Info_no-space-b_touch">{props.children}</div>
-);
-
-export default BranchInfoInfo_noSpaceB_touch;
+export const BranchInfoInfoNoSpaceBTouch = withBemMod('BranchInfo', { no-space-b: 'touch'})

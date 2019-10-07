@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Tabs-Item_state_active.scss';
 
-const TabsItem_state_active = (props) => (
-  <div className="Tabs-Item_state_active">{props.children}</div>
-);
-
-export default TabsItem_state_active;
+export const TabsItemStateActive = withBemMod('Tabs', { state: 'active'})

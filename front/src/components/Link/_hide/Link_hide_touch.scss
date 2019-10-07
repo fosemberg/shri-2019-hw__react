@@ -1,5 +1,5 @@
 .Link {
-  &.hide_touch {
+  &_hide_touch {
         @media screen and (max-width: 600px) {
             visibility: hidden;
         }

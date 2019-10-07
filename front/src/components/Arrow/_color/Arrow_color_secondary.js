@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Arrow_color_secondary.scss';
 
-const Arrow_color_secondary = (props) => (
-  <div className="Arrow_color_secondary">{props.children}</div>
-);
-
-export default Arrow_color_secondary;
+export const ArrowColorSecondary = withBemMod('Arrow', { color: 'secondary'})

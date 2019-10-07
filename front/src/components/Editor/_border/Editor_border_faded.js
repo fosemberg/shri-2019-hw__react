@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Editor_border_faded.scss';
 
-const Editor_border_faded = (props) => (
-  <div className="Editor_border_faded">{props.children}</div>
-);
-
-export default Editor_border_faded;
+export const EditorBorderFaded = withBemMod('Editor', { border: 'faded'})

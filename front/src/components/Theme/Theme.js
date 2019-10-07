@@ -1,6 +1,6 @@
 import React from 'react';
-import './Theme.scss';
 import {cn} from "@bem-react/classname";
+import './Theme.scss';
 
 export const cnTheme = cn('Theme');
 

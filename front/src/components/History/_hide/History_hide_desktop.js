@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './History_hide_desktop.scss';
 
-const History_hide_desktop = (props) => (
-  <div className="History_hide_desktop">{props.children}</div>
-);
-
-export default History_hide_desktop;
+export const HistoryHideDesktop = withBemMod('History', { hide: 'desktop'})

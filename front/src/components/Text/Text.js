@@ -1,8 +1,11 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import './Text.scss';
 
-const Text = (props) => (
-  <div className="Text">{props.children}</div>
+export const cnText = cn('Text');
+
+const Text = ({className, children}) => (
+  <div className={cnText({}, [className])}>{children}</div>
 );
 
 export default Text;

@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './File-Icon_type_branch.scss';
 
-const FileIcon_type_branch = (props) => (
-  <div className="File-Icon_type_branch">{props.children}</div>
-);
-
-export default FileIcon_type_branch;
+export const FileIconTypeBranch = withBemMod('File', { type: 'branch'})

@@ -1,5 +1,5 @@
 .Theme {
-  &.gap_small {
+  &_gap_small {
             --full: var(--space-xxxl);
             --half: calc(var(--full) / 2);
             --two-thirds: calc(var(--full) / 3 * 2)

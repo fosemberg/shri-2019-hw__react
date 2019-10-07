@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Icon_size_s.scss';
 
-const Icon_size_s = (props) => (
-  <div className="Icon_size_s">{props.children}</div>
-);
-
-export default Icon_size_s;
+export const IconSizeS = withBemMod('Icon', { size: 's'})

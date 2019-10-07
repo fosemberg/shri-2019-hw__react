@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Icon_indent-r_xxs.scss';
 
-const Icon_indentR_xxs = (props) => (
-  <div className="Icon_indent-r_xxs">{props.children}</div>
-);
-
-export default Icon_indentR_xxs;
+export const IconIndentRXxs = withBemMod('Icon', { indent-r: 'xxs'})

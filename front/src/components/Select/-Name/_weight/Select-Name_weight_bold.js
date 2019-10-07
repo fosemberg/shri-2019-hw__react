@@ -1,8 +1,4 @@
-import React from 'react';
+import { withBemMod } from '@bem-react/core';
 import './Select-Name_weight_bold.scss';
 
-const SelectName_weight_bold = (props) => (
-  <div className="Select-Name_weight_bold">{props.children}</div>
-);
-
-export default SelectName_weight_bold;
+export const SelectNameWeightBold = withBemMod('Select', { weight: 'bold'})
