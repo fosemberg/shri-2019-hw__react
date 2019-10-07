@@ -21,7 +21,7 @@ import {TabsItemStateActive} from "../../components/Tabs/-Item/_state/Tabs-Item_
 import Header from "../../components/Header/Header";
 import {BreadCrumbsBorderB} from "../../components/BreadCrumbs/_border-b/BreadCrumbs_border-b";
 import {LayoutContainerGrow} from "../../components/Layout/-Container/_grow/Layout-Container_grow";
-import Link from "../../components/Link/Link";
+import {Link} from 'react-router-dom';
 import User from "../../components/User/User";
 import Footer from "../../components/Footer/Footer";
 import TableRow from "../../components/Table/-Row/Table-Row";
@@ -29,6 +29,8 @@ import TableCell from "../../components/Table/-Cell/Table-Cell";
 import TableHead from "../../components/Table/-Head/Table-Head";
 import Table from "../../components/Table/Table";
 import {BranchInfoBorderBottom} from "../../components/BranchInfo/_border/BranchInfo_border_bottom";
+
+import {withRouter} from 'react-router-dom';
 
 const Theme = compose(
     ThemeSpaceDefault,
@@ -181,8 +183,11 @@ const dataMock = [
     }
 ]
 
-const PageFileListContent = () => (
-    <Theme space='default' size='default' color='project-default' gap='small' font='default'>
+
+const PageFileListContent = withRouter(({location}) => {
+    let {pathname} = location;
+    pathname = pathname.slice(-1) === '/' ? pathname : pathname + '/';
+    return <Theme space='default' size='default' color='project-default' gap='small' font='default'>
         <Layout>
             <Header/>
             <LayoutContainer grow>
@@ -237,21 +242,21 @@ trunk
                                  commitMessage,
                                  committer,
                                  updated
-                             }) =>
-                                <TableRow>
+                             }, key) =>
+                                <TableRow key={key}>
                                     <TableCell>
-                                        <div class="file file_type_dir">
-                                            <div class="file__icon file__icon_type_${fileType}"></div>
+                                        <Link to={`${pathname}${name}`} className="file file_type_dir" >
+                                            <div className="file__icon file__icon_type_${fileType}"></div>
                                             {name}
-                                        </div>
+                                        </Link>
                                     </TableCell>
                                     <TableCell>
-                                        <a class="link link__control" href="#" role="link"
+                                        <a className="link link__control" href="#" role="link"
                                            tabindex="0">{lastCommit}
                                         </a>
                                     </TableCell>
                                     <TableCell>{commitMessage}</TableCell>
-                                    <TableCell><span class="user">{committer}</span></TableCell>
+                                    <TableCell><span className="user">{committer}</span></TableCell>
                                     <TableCell>{updated}</TableCell>
                                 </TableRow>
                         )
@@ -262,6 +267,6 @@ trunk
             <Footer/>
         </Layout>
     </Theme>
-);
+});
 
 export default PageFileListContent;
