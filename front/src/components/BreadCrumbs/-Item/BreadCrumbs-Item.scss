@@ -1,24 +1,26 @@
 .BreadCrumbs {
   &-Item {
-        &:after {
-            content: '/';
-            margin: 0 var(--space-s);
-            position: relative;
-            top: 1px;
-        }
+    text-decoration: none;
 
-        &:only-of-type {
-            color: var(--primary);
-        }
-
-        &:last-of-type {
-            font-weight: bold;
-            color: var(--primary);
-
-            &:after {
-                content: '';
-                margin: 0;
-            }
-        }
+    &:after {
+      content: '/';
+      margin: 0 var(--space-s);
+      position: relative;
+      top: 1px;
     }
+
+    &:only-of-type {
+      color: var(--primary);
+    }
+
+    &:last-of-type {
+      font-weight: bold;
+      color: var(--primary);
+
+      &:after {
+        content: '';
+        margin: 0;
+      }
+    }
+  }
 }

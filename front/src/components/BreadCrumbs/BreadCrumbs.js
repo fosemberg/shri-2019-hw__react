@@ -8,14 +8,22 @@ export const cnBreadCrumbs = cn('BreadCrumbs');
 
 const BreadCrumbs = ({className}) =>
     <Route
-        path="*"
+        path='*'
         render={({location: {pathname}}) =>
             <div className={cnBreadCrumbs({}, [className])}>
                 {
                     pathname
-                        .split("/")
-                        .map((crumb, key) =>
-                            <BreadCrumbsItem {...{key}}>{crumb}</BreadCrumbsItem>)
+                        .split('/')
+                        .filter(x => x)
+                        .map((crumb, key, crumbs) =>
+                            <BreadCrumbsItem{...{
+                                key,
+                                to: '/' + crumbs
+                                    .slice(0, key + 1)
+                                    .join('/')
+                            }}>
+                                {crumb}
+                            </BreadCrumbsItem>)
                 }
             </div>
         }
