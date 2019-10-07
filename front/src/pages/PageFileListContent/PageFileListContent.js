@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from '@bem-react/core';
 import BranchInfo from "../../components/BranchInfo/BranchInfo";
-import LayoutContainer from "../../components/Layout/-Container/Layout-Container";
+import LayoutContainerBase from "../../components/Layout/-Container/Layout-Container";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import BreadCrumbsItem from "../../components/BreadCrumbs/-Item/BreadCrumbs-Item";
 import BranchInfoHeader from "../../components/BranchInfo/-Header/BranchInfo-Header";
@@ -17,6 +17,7 @@ import {ThemeColorProjectDefault} from "../../components/Theme/_color/Theme_colo
 import {ThemeSpaceDefault} from "../../components/Theme/_space/Theme_space_default";
 import {ThemeSizeDefault} from "../../components/Theme/_size/Theme_size_default";
 import {ThemeGapSmall} from "../../components/Theme/_gap/Theme_gap_small";
+import {LayoutContainerGrowTrue} from "../../components/Layout/-Container/_grow/Layout-Container_grow_true";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -25,7 +26,9 @@ const Theme = compose(
   ThemeGapSmall
 )(ThemeBase);
 
-
+const LayoutContainer = compose(
+  LayoutContainerGrowTrue
+)(LayoutContainerBase)
 
 const PageFileListContent = () => (
     <Theme space='default' size='default' color='project-default' gap='small' font='default'>
