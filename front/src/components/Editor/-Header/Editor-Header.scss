@@ -1,0 +1,31 @@
+.Editor {
+  &.Header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-family: var(--font);
+        font-size: var(--font-s);
+        line-height: var(--line-m);
+        border-radius: 4px;
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        @media screen and (max-width: 600px) {
+            border-radius: 0;
+            padding-top: var(--space-xxs);
+            padding-bottom: 6px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.GitLogRow {
+  &.Item {
+    &:mod(padding both) {
+        padding: var(--space-xxxs) 0;
+    }
+}

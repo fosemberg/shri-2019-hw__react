@@ -1,0 +1,7 @@
+.BranchInfo-Info {
+  &.no-space-b_touch {
+            @media screen and (max-width: 600px) {
+                margin-bottom: 0;
+            }
+        }
+}

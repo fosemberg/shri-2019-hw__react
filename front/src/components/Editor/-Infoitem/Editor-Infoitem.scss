@@ -1,0 +1,9 @@
+.Editor {
+  &.Infoitem {
+        margin-right: var(--space-m);
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

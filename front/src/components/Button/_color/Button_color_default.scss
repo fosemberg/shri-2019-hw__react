@@ -1,0 +1,6 @@
+.Button {
+  &.color_default {
+        background: var(--plain);
+        color: var(--primary);
+    }
+}

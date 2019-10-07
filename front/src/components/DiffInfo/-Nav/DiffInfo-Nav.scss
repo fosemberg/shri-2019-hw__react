@@ -1,0 +1,10 @@
+.DiffInfo {
+  &.Nav {
+        width: 60%;
+        display: flex;
+
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+}

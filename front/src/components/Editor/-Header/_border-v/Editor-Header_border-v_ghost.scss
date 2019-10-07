@@ -1,0 +1,6 @@
+.Editor-Header {
+  &.border-v_ghost {
+            border-top: 1px solid var(--border-ghost);
+            border-bottom: 1px solid var(--border-ghost);
+        }
+}

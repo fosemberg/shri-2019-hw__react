@@ -1,0 +1,10 @@
+.BranchInfo-Name {
+  &.size_xl {
+            font-size: var(--font-xl);
+
+            @media screen and (max-width: 600px) {
+                font-size: var(--font-l);
+                order: 2;
+            }
+        }
+}

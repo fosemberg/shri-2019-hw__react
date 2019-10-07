@@ -1,0 +1,16 @@
+.Editor {
+  &.Number {
+        width: 41px;
+        text-align: right;
+        color: var(--editor-number);
+        padding: 0;
+
+        
+
+        
+
+        @media screen and (max-width: 600px) {
+            width: 10px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.History {
+  &.Title {
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: var(--space-m);
+  }
+
+  &:elem(row) {
+    padding: 0 0 var(--space-m) 31px;
+    margin: 0 0 0 19px;
+    border-left: 2px solid var(--ghost);
+    box-sizing: border-box;
+
+    &:last-of-type {
+      border-left: none;
+      padding-bottom: 0;
+    }
+}

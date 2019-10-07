@@ -1,0 +1,25 @@
+.Layout {
+  &.Container {
+        margin: 0 var(--space-xxl);
+
+        
+
+        @media screen and (max-width: 600px) {
+            margin: 0 var(--space-m);
+        }
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+    }
+}

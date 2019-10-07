@@ -1,0 +1,11 @@
+.History {
+  &.hide_desktop {
+
+        &:after {
+          display: none;
+          @media screen and (max-width: 600px) {
+            display: inline-block;
+          }
+        }
+    }
+}

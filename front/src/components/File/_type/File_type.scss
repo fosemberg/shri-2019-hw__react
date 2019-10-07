@@ -1,0 +1,10 @@
+.File {
+  &.type {
+        &:mod(dir), &:mod(branch) {
+            font-weight: bold;
+        }
+
+        &:mod(file) {
+        }
+    }
+}

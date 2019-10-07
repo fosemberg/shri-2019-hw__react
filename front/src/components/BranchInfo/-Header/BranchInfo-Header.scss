@@ -1,0 +1,13 @@
+.BranchInfo {
+  &.Header {
+        display: flex;
+
+        @media screen and (max-width: 600px) {
+            flex-wrap: wrap;
+        }
+
+        
+
+        
+    }
+}

@@ -1,0 +1,11 @@
+.Editor {
+  &.Info {
+        display: flex;
+
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            justify-content: space-between;
+            margin-top: var(--space-xs);
+        }
+    }
+}

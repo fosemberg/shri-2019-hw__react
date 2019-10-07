@@ -1,0 +1,9 @@
+.Editor {
+  &.HeaderParagraph {
+        margin: 0;
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
