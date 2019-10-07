@@ -1,5 +1,7 @@
 .Footer {
   &-Item {
-        display: flex;
-    }
+    display: flex;
+    margin-right: var(--space-xxs);
+    white-space: nowrap;
+  }
 }

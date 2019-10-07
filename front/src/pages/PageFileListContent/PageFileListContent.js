@@ -23,6 +23,7 @@ import {BreadCrumbsBorderB} from "../../components/BreadCrumbs/_border-b/BreadCr
 import {LayoutContainerGrow} from "../../components/Layout/-Container/_grow/Layout-Container_grow";
 import Link from "../../components/Link/Link";
 import User from "../../components/User/User";
+import Footer from "../../components/Footer/Footer";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -90,9 +91,8 @@ trunk
           </thead>
           <tbody mix={{'block': 'desktop-files'}}/>
         </table>
-
       </LayoutContainer>
-      <footer/>
+      <Footer/>
     </Layout>
   </Theme>
 );
