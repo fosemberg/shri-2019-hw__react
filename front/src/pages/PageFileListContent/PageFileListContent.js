@@ -6,7 +6,6 @@ import BranchInfoHeader from "../../patterns/BranchInfo/-Header/BranchInfo-Heade
 import BranchInfoName from "../../patterns/BranchInfo/-Name/BranchInfo-Name";
 import BranchInfoSelect from "../../patterns/BranchInfo/-Select/BranchInfo-Select";
 import BranchInfoSearch from "../../patterns/BranchInfo/-Search/BranchInfo-Search";
-import BranchInfoInfo from "../../patterns/BranchInfo/-Info/BranchInfo-Info";
 import TabsItemBase from "../../patterns/Tabs/-Item/Tabs-Item";
 import Tabs from "../../patterns/Tabs/Tabs";
 import Layout from "../../patterns/Layout/Layout";
@@ -21,13 +20,12 @@ import {LayoutContainerGrow} from "../../patterns/Layout/-Container/_grow/Layout
 import {Link} from 'react-router-dom';
 import User from "../../patterns/User/User";
 import Footer from "../../patterns/Footer/Footer";
-import TableRow from "../../patterns/Table/-Row/Table-Row";
-import TableCell from "../../patterns/Table/-Cell/Table-Cell";
-import TableHead from "../../patterns/Table/-Head/Table-Head";
 import Table from "../../patterns/Table/Table";
 import {BranchInfoBorderBottom} from "../../patterns/BranchInfo/_border/BranchInfo_border_bottom";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import Files from "../../components/Files/Files";
+import TableHead from "../../components/TableHead/TableHead";
+import BranchInfoContent from "../../patterns/BranchInfo/-Content/BranchInfo-Content";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -47,14 +45,6 @@ const TabsItem = compose(
 const BranchInfo = compose(
   BranchInfoBorderBottom
 )(BranchInfoBase)
-
-const headerMock = [
-  'name',
-  'Last commit',
-  'Commit message',
-  'Committer',
-  'Updated'
-]
 
 const PageFileListContent = () => (
   <Theme space='default' size='default' color='project-default' gap='small' font='default'>
@@ -77,14 +67,14 @@ trunk
             <BranchInfoSearch>
             </BranchInfoSearch>
           </BranchInfoHeader>
-          <BranchInfoInfo>
+          <BranchInfoContent>
             {' Last commit '}
             <Link>c4d248</Link>
             {' on '}
             <Link>20 Oct 2017, 12:24</Link>
             {' by '}
             <User>robot-srch-releaser</User>
-          </BranchInfoInfo>
+          </BranchInfoContent>
           <Tabs>
             <TabsItem state='active'>
               files
@@ -95,13 +85,7 @@ trunk
           </Tabs>
         </BranchInfo>
         <Table hide='touch'>
-          <TableHead>
-            <TableRow>
-              {headerMock.map(headerName =>
-                <TableCell key={headerName}>{headerName}</TableCell>
-              )}
-            </TableRow>
-          </TableHead>
+          <TableHead/>
           <tbody>
           <Files/>
           </tbody>
