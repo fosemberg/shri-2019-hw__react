@@ -3,11 +3,11 @@ import TableHead from "../TableHead/TableHead";
 import FilesContent from "./-Content/FilesContent";
 import Table from "../../patterns/Table/Table";
 
-const Files = () => (
+const Files = ({data}) => (
   <Table>
     <TableHead/>
     <tbody>
-    <FilesContent/>
+    <FilesContent data={data}/>
     </tbody>
   </Table>
 );
