@@ -5,7 +5,7 @@ import './File.scss';
 export const cnFile = cn('File');
 
 const File = ({className, children}) => (
-  <div className={cnFile({}, [className])}>{children}</div>
+  <span className={cnFile({}, [className])}>{children}</span>
 );
 
 export default File;

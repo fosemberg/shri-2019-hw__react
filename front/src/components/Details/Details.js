@@ -9,6 +9,13 @@ import "../../patterns/Editor/_border/Editor_border_faded.scss";
 import EditorHeaderBase from "../../patterns/Editor/-Header/Editor-Header";
 import {EditorHeaderSpaceHM} from "../../patterns/Editor/-Header/_space-h/Editor-Header_space-h_m";
 import {EditorHeaderSpaceVS} from "../../patterns/Editor/-Header/_space-v/Editor-Header_space-v_s";
+import {EditorHeaderColorDefault} from "../../patterns/Editor/-Header/_color/Editor-Header_color_default";
+import EditorHeaderItem from "../../patterns/Editor/-HeaderItem/Editor-HeaderItem";
+import File from "../../patterns/File/File";
+import FileIconBase from "../../patterns/File/-Icon/File-Icon";
+import {FileIconTypeCode} from "../../patterns/File/-Icon/_type/File-Icon_type_code";
+import {FileIconTypeFile} from "../../patterns/File/-Icon/_type/File-Icon_type_file";
+import {FileIconTypeReadme} from "../../patterns/File/-Icon/_type/File-Icon_type_readme";
 
 
 const Section = compose(
@@ -17,15 +24,37 @@ const Section = compose(
 )(SectionBase);
 
 const EditorHeader = compose(
+  EditorHeaderColorDefault,
   EditorHeaderSpaceHM,
   EditorHeaderSpaceVS
 )(EditorHeaderBase);
 
+const FileIcon = compose(
+  FileIconTypeCode,
+  FileIconTypeFile,
+  FileIconTypeReadme,
+)(FileIconBase)
 
-const Details = ({data}) => (
-  <Section className={cnEditor({border: 'faded'})}>
-    <EditorHeader>
-      ya.make
+const Details = ({data, fileName = 'fileName'}) => (
+  <Section
+    className={cnEditor({border: 'faded'})}
+    indentT='m'
+    indentB='m'
+  >
+    <EditorHeader
+      color={'default'}
+      spaceH={'m'}
+      spaceV={'s'}
+    >
+      <EditorHeaderItem>
+        <File>
+          <FileIcon
+            type={'code'}
+          />
+          {fileName}
+        </File>
+      </EditorHeaderItem>
+
     </EditorHeader>
     {data}
   </Section>
