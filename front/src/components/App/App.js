@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
-import PageFileListContent from "../../pages/PageFileListContent/PageFileListContent";
+import MainPage from "../../pages/MainPage/MainPage";
 
 const App = () => (
     <BrowserRouter>
-    <PageFileListContent/>
+    <MainPage/>
     </BrowserRouter>
 );
 
