@@ -1,4 +1,4 @@
 import { withBemMod } from '@bem-react/core';
 import './Editor-Header_space-v_m.scss';
 
-export const EditorHeaderSpaceVM = withBemMod('Editor-Header', { space-v: 'm'})
+export const EditorHeaderSpaceVM = withBemMod('Editor-Header', { spaceV: 'm'})
