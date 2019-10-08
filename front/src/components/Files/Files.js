@@ -1,9 +1,8 @@
-import React from "react";
+import React, {useState, useEffect, memo} from "react";
 import TableRow from "../../patterns/Table/-Row/Table-Row";
 import TableCell from "../../patterns/Table/-Cell/Table-Cell";
-import {Link as RouterLink} from "react-router-dom";
+import {Link as RouterLink, withRouter} from "react-router-dom";
 import LinkBase from "../../patterns/Link/Link";
-import {withRouter} from 'react-router-dom';
 import {cnLink} from "../../patterns/Link/Link";
 import "../../patterns/Link/Link.scss";
 import {cnFile} from "../../patterns/File/File";
@@ -12,6 +11,8 @@ import "../../patterns/File/_type/File_type_branch.scss";
 import "../../patterns/File/_type/File_type_dir.scss";
 import "../../patterns/File/_type/File_type_file.scss";
 import User from "../../patterns/User/User";
+import {useLocation} from "react-router";
+
 
 const dataMock = [
   {
@@ -133,13 +134,39 @@ const dataMock = [
   }
 ]
 
-const Files = withRouter(({location}) => {
-  let {pathname} = location;
-  console.log(pathname);
-  pathname = pathname.slice(-1) === '/' ? pathname : pathname + '/';
+const getDataTest = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(dataMock), 1000)
+  })
+}
+
+const getData = (url) => {
+  return dataMock;
+}
+
+const Files = ({getData = getDataTest}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [data, setData] = useState({});
+  const {pathname} = useLocation();
+  const _pathname = pathname.slice(-1) === '/' ? pathname : pathname + '/';
+
+  useEffect(() => {
+    setIsLoaded(false);
+    setData({});
+  }, [_pathname])
+
+  console.log(_pathname);
+
+  getData(_pathname).then(
+    json => {
+      setData(json);
+      setIsLoaded(true);
+    }
+  )
   return <>
     {
-      dataMock.map(
+      isLoaded
+        ? data.map(
         ({
            fileType,
            name,
@@ -150,7 +177,7 @@ const Files = withRouter(({location}) => {
          }, key) =>
           <TableRow key={key}>
             <TableCell>
-              <RouterLink to={`${pathname}${name}`} className={cnFile({type: 'dir'}, [cnLink()])}>
+              <RouterLink onClick={() => setIsLoaded(false)} to={`${_pathname}${name}`} className={cnFile({type: 'dir'}, [cnLink()])}>
                 <div className="file__icon file__icon_type_${fileType}"></div>
                 {name}
               </RouterLink>
@@ -164,9 +191,14 @@ const Files = withRouter(({location}) => {
             <TableCell><User>{committer}</User></TableCell>
             <TableCell>{updated}</TableCell>
           </TableRow>
-      )
+        )
+        : <TableRow>
+          <TableCell colSpan={2}>
+            Loading...
+          </TableCell>
+        </TableRow>
     }
   </>
-});
+};
 
-export default Files;
+export default memo(Files);
