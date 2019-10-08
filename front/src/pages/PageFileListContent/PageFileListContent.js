@@ -13,6 +13,7 @@ import Footer from "../../patterns/Footer/Footer";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import BranchInfo from "../../components/BranchInfo/BranchInfo";
 import Files from "../../components/Files/Files";
+import Details from "../../components/Details/Details";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -25,9 +26,9 @@ const LayoutContainer = compose(
   LayoutContainerGrow
 )(LayoutContainerBase)
 
-
-const PageFileListContent = () => (
-  <Theme
+const PageFileListContent = () => {
+  const isFile = false;
+  return <Theme
     space='default'
     size='default'
     color='project-default'
@@ -39,11 +40,15 @@ const PageFileListContent = () => (
       <LayoutContainer grow>
         <BreadCrumbs/>
         <BranchInfo/>
-        <Files/>
+        {
+          isFile
+            ? <Details/>
+            : <Files/>
+        }
       </LayoutContainer>
       <Footer/>
     </Layout>
   </Theme>
-)
+}
 
 export default PageFileListContent;
