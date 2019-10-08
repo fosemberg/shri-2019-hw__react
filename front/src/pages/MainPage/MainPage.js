@@ -37,8 +37,6 @@ const MainPage = ({getData}) => {
     setData({});
   }, [pathname])
 
-  console.log(pathname);
-
   getData(pathname).then(
     json => {
       setData(json);
@@ -46,7 +44,7 @@ const MainPage = ({getData}) => {
     }
   )
 
-  const isFile = false;
+  const isFiles = Array.isArray(data);
   return <Theme
     space='default'
     size='default'
@@ -61,9 +59,9 @@ const MainPage = ({getData}) => {
         <BranchInfo/>
         {
           isLoaded
-            ? isFile
-              ? <Details data={data}/>
-              : <Files data={data}/>
+            ? isFiles
+              ? <Files data={data}/>
+              : <Details data={data}/>
             : <div>Loading...</div>
         }
       </LayoutContainer>

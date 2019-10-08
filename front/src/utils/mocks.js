@@ -120,6 +120,14 @@ const files = [
 
 export const getDataTest = (url) => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(files), 1000)
+
+    const data = ~url
+      .slice(0, -1)
+      .split('/')
+      .pop()
+      .indexOf('.')
+      ? 'content'
+      : files;
+    setTimeout(() => resolve(data), 1000)
   })
 }
