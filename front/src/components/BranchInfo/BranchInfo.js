@@ -32,11 +32,11 @@ const SelectName = compose(
   SelectNameColorSecondary
 )(SelectNameBase)
 
-const BranchInfo = ({isFiles}) => (
+const BranchInfo = ({repositoryName, isFiles}) => (
   <BranchInfoView border='bottom'>
     <BranchInfoHeader>
       <BranchInfoName>
-        arcadia
+        {repositoryName}
       </BranchInfoName>
       <BranchInfoSelect className={cnSelect({size: 'big'})}>
         <SelectName color='secondary'>

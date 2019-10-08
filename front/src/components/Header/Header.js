@@ -21,12 +21,12 @@ const SelectArrow = compose(
   SelectArrowPositionCenter,
 )(SelectArrowBase)
 
-const Header = () => (
+const Header = ({repositoryName}) => (
   <HeaderBase>
     <HeaderLogo/>
     <HeaderSelect className={cnSelect()}>
       <SelectName weight='bold'>Repository</SelectName>
-      <SelectName>Arc</SelectName>
+      <SelectName>{repositoryName}</SelectName>
       <SelectArrow className={cnArrow({state: 'down'})} position='center'/>
     </HeaderSelect>
   </HeaderBase>

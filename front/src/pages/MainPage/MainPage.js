@@ -31,6 +31,7 @@ const MainPage = ({getData}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState({});
   const pathname = usePathname();
+  const repositoryName = pathname.split('/').filter(x => x && x !== "")[0] || '';
 
   useEffect(() => {
     setIsLoaded(false);
@@ -53,10 +54,10 @@ const MainPage = ({getData}) => {
     font='default'
   >
     <Layout>
-      <Header/>
+      <Header repositoryName={repositoryName}/>
       <LayoutContainer grow>
-        <BreadCrumbs/>
-        <BranchInfo isFiles={isFiles}/>
+        <BreadCrumbs repositoryNaeme={repositoryName}/>
+        <BranchInfo repositoryName={repositoryName} isFiles={isFiles}/>
         {
           isLoaded
             ? isFiles
