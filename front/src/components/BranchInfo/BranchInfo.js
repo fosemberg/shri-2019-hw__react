@@ -32,7 +32,7 @@ const SelectName = compose(
   SelectNameColorSecondary
 )(SelectNameBase)
 
-const BranchInfo = () => (
+const BranchInfo = ({isFiles}) => (
   <BranchInfoView border='bottom'>
     <BranchInfoHeader>
       <BranchInfoName>
@@ -48,7 +48,7 @@ const BranchInfo = () => (
       </BranchInfoSearch>
     </BranchInfoHeader>
     <BranchInfoContent/>
-    <Tabs/>
+    <Tabs isFiles={isFiles}/>
   </BranchInfoView>
 );
 

@@ -8,13 +8,13 @@ const TabsItem = compose(
   TabsItemStateActive
 )(TabsItemBase)
 
-const Tabs = () => (
+const Tabs = ({isFiles}) => (
   <TabsView>
     <TabsItem state='active'>
-      files
+      {isFiles ? 'files' : 'details'}
     </TabsItem>
     <TabsItem>
-      branches
+      {isFiles ? 'branches' : 'history'}
     </TabsItem>
   </TabsView>
 );

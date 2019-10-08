@@ -56,7 +56,7 @@ const MainPage = ({getData}) => {
       <Header/>
       <LayoutContainer grow>
         <BreadCrumbs/>
-        <BranchInfo/>
+        <BranchInfo isFiles={isFiles}/>
         {
           isLoaded
             ? isFiles
