@@ -1,7 +1,5 @@
 .BreadCrumbs {
   &-Item {
-    text-decoration: none;
-
     &:after {
       content: '/';
       margin: 0 var(--space-s);

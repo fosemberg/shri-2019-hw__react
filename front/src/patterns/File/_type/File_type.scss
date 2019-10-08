@@ -1,10 +1,10 @@
 .File {
   &_type {
-        &:mod(dir), &:mod(branch) {
+        &_dir, &_branch {
             font-weight: bold;
         }
 
-        &:mod(file) {
+        &_file {
         }
     }
 }

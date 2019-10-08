@@ -1,20 +1,16 @@
 import React from 'react';
+import {cn} from "@bem-react/classname";
 import {Route} from 'react-router-dom';
-import '../../patterns/BreadCrumbs/BreadCrumbs.scss';
-import BreadCrumbsItem from "../../patterns/BreadCrumbs/-Item/BreadCrumbs-Item";
-import BreadCrumbsBase, {cnBreadCrumbs} from "../../patterns/BreadCrumbs/BreadCrumbs";
-import {compose} from "@bem-react/core";
-import {BreadCrumbsBorderB} from "../../patterns/BreadCrumbs/_border-b/BreadCrumbs_border-b";
+import './BreadCrumbs.scss';
+import BreadCrumbsItem from "./-Item/BreadCrumbs-Item";
 
-const BreadCrumbsView = compose(
-    BreadCrumbsBorderB
-)(BreadCrumbsBase);
+export const cnBreadCrumbs = cn('BreadCrumbs');
 
 const BreadCrumbs = ({className}) =>
     <Route
         path='*'
         render={({location: {pathname}}) =>
-            <BreadCrumbsView className={className}>
+            <div className={cnBreadCrumbs({}, [className])}>
                 {
                     pathname
                         .split('/')
@@ -29,7 +25,7 @@ const BreadCrumbs = ({className}) =>
                                 {crumb}
                             </BreadCrumbsItem>)
                 }
-            </BreadCrumbsView>
+            </div>
         }
     />;
 

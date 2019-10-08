@@ -1,36 +1,40 @@
 import React from 'react';
 import {compose} from '@bem-react/core';
-import BranchInfoBase from "../../components/BranchInfo/BranchInfo";
-import LayoutContainerBase from "../../components/Layout/-Container/Layout-Container";
-import BreadCrumbsBase from "../../components/BreadCrumbs/BreadCrumbs";
-import BreadCrumbsItem from "../../components/BreadCrumbs/-Item/BreadCrumbs-Item";
-import BranchInfoHeader from "../../components/BranchInfo/-Header/BranchInfo-Header";
-import BranchInfoName from "../../components/BranchInfo/-Name/BranchInfo-Name";
-import BranchInfoSelect from "../../components/BranchInfo/-Select/BranchInfo-Select";
-import BranchInfoSearch from "../../components/BranchInfo/-Search/BranchInfo-Search";
-import BranchInfoInfo from "../../components/BranchInfo/-Info/BranchInfo-Info";
-import TabsItemBase from "../../components/Tabs/-Item/Tabs-Item";
-import Tabs from "../../components/Tabs/Tabs";
-import Layout from "../../components/Layout/Layout";
-import ThemeBase from "../../components/Theme/Theme";
-import {ThemeColorProjectDefault} from "../../components/Theme/_color/Theme_color_project-default";
-import {ThemeSpaceDefault} from "../../components/Theme/_space/Theme_space_default";
-import {ThemeSizeDefault} from "../../components/Theme/_size/Theme_size_default";
-import {ThemeGapSmall} from "../../components/Theme/_gap/Theme_gap_small";
-import {TabsItemStateActive} from "../../components/Tabs/-Item/_state/Tabs-Item_state_active";
-import Header from "../../components/Header/Header";
-import {BreadCrumbsBorderB} from "../../components/BreadCrumbs/_border-b/BreadCrumbs_border-b";
-import {LayoutContainerGrow} from "../../components/Layout/-Container/_grow/Layout-Container_grow";
+import BranchInfoBase from "../../patterns/BranchInfo/BranchInfo";
+import LayoutContainerBase from "../../patterns/Layout/-Container/Layout-Container";
+import BranchInfoHeader from "../../patterns/BranchInfo/-Header/BranchInfo-Header";
+import BranchInfoName from "../../patterns/BranchInfo/-Name/BranchInfo-Name";
+import BranchInfoSelect from "../../patterns/BranchInfo/-Select/BranchInfo-Select";
+import BranchInfoSearch from "../../patterns/BranchInfo/-Search/BranchInfo-Search";
+import BranchInfoInfo from "../../patterns/BranchInfo/-Info/BranchInfo-Info";
+import TabsItemBase from "../../patterns/Tabs/-Item/Tabs-Item";
+import Tabs from "../../patterns/Tabs/Tabs";
+import Layout from "../../patterns/Layout/Layout";
+import ThemeBase from "../../Theme/Theme";
+import {ThemeColorProjectDefault} from "../../Theme/_color/Theme_color_project-default";
+import {ThemeSpaceDefault} from "../../Theme/_space/Theme_space_default";
+import {ThemeSizeDefault} from "../../Theme/_size/Theme_size_default";
+import {ThemeGapSmall} from "../../Theme/_gap/Theme_gap_small";
+import {TabsItemStateActive} from "../../patterns/Tabs/-Item/_state/Tabs-Item_state_active";
+import Header from "../../patterns/Header/Header";
+import {LayoutContainerGrow} from "../../patterns/Layout/-Container/_grow/Layout-Container_grow";
 import {Link} from 'react-router-dom';
-import User from "../../components/User/User";
-import Footer from "../../components/Footer/Footer";
-import TableRow from "../../components/Table/-Row/Table-Row";
-import TableCell from "../../components/Table/-Cell/Table-Cell";
-import TableHead from "../../components/Table/-Head/Table-Head";
-import Table from "../../components/Table/Table";
-import {BranchInfoBorderBottom} from "../../components/BranchInfo/_border/BranchInfo_border_bottom";
-
+import User from "../../patterns/User/User";
+import Footer from "../../patterns/Footer/Footer";
+import TableRow from "../../patterns/Table/-Row/Table-Row";
+import TableCell from "../../patterns/Table/-Cell/Table-Cell";
+import TableHead from "../../patterns/Table/-Head/Table-Head";
+import Table from "../../patterns/Table/Table";
+import {BranchInfoBorderBottom} from "../../patterns/BranchInfo/_border/BranchInfo_border_bottom";
 import {withRouter} from 'react-router-dom';
+import {cnLink} from "../../patterns/Link/Link";
+import "../../patterns/Link/Link.scss";
+import {cnFile} from "../../patterns/File/File";
+import "../../patterns/File/File.scss";
+import "../../patterns/File/_type/File_type_branch.scss";
+import "../../patterns/File/_type/File_type_dir.scss";
+import "../../patterns/File/_type/File_type_file.scss";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 
 const Theme = compose(
     ThemeSpaceDefault,
@@ -46,10 +50,6 @@ const LayoutContainer = compose(
 const TabsItem = compose(
     TabsItemStateActive
 )(TabsItemBase)
-
-const BreadCrumbs = compose(
-    BreadCrumbsBorderB
-)(BreadCrumbsBase)
 
 const BranchInfo = compose(
     BranchInfoBorderBottom
@@ -191,7 +191,7 @@ const PageFileListContent = withRouter(({location}) => {
         <Layout>
             <Header/>
             <LayoutContainer grow>
-                <BreadCrumbs borderB/>
+                <BreadCrumbs/>
                 <BranchInfo border='bottom'>
                     <BranchInfoHeader>
                         <BranchInfoName>
@@ -245,7 +245,7 @@ trunk
                              }, key) =>
                                 <TableRow key={key}>
                                     <TableCell>
-                                        <Link to={`${pathname}${name}`} className="file file_type_dir" >
+                                        <Link to={`${pathname}${name}`} className={cnFile({type: 'dir'},[cnLink()])}>
                                             <div className="file__icon file__icon_type_${fileType}"></div>
                                             {name}
                                         </Link>

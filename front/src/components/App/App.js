@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
-import PageFileListContent from "../PageFileListContent/PageFileListContent";
 import { BrowserRouter } from 'react-router-dom';
+import PageFileListContent from "../../pages/PageFileListContent/PageFileListContent";
 
 const App = () => (
     <BrowserRouter>
