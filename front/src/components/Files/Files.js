@@ -1,7 +1,8 @@
 import React from "react";
 import TableRow from "../../patterns/Table/-Row/Table-Row";
 import TableCell from "../../patterns/Table/-Cell/Table-Cell";
-import {Link} from "react-router-dom";
+import {Link as RouterLink} from "react-router-dom";
+import LinkBase from "../../patterns/Link/Link";
 import {withRouter} from 'react-router-dom';
 import {cnLink} from "../../patterns/Link/Link";
 import "../../patterns/Link/Link.scss";
@@ -10,6 +11,7 @@ import "../../patterns/File/File.scss";
 import "../../patterns/File/_type/File_type_branch.scss";
 import "../../patterns/File/_type/File_type_dir.scss";
 import "../../patterns/File/_type/File_type_file.scss";
+import User from "../../patterns/User/User";
 
 const dataMock = [
   {
@@ -148,18 +150,18 @@ const Files = withRouter(({location}) => {
          }, key) =>
           <TableRow key={key}>
             <TableCell>
-              <Link to={`${pathname}${name}`} className={cnFile({type: 'dir'}, [cnLink()])}>
+              <RouterLink to={`${pathname}${name}`} className={cnFile({type: 'dir'}, [cnLink()])}>
                 <div className="file__icon file__icon_type_${fileType}"></div>
                 {name}
-              </Link>
+              </RouterLink>
             </TableCell>
             <TableCell>
-              <a className="link link__control" href="#" role="link"
-                 tabindex="0">{lastCommit}
-              </a>
+              <LinkBase>
+                {lastCommit}
+              </LinkBase>
             </TableCell>
             <TableCell>{commitMessage}</TableCell>
-            <TableCell><span className="user">{committer}</span></TableCell>
+            <TableCell><User>{committer}</User></TableCell>
             <TableCell>{updated}</TableCell>
           </TableRow>
       )
