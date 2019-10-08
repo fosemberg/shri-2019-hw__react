@@ -5,7 +5,7 @@ import './Editor-ByteCount.scss';
 export const cnEditorByteCount = cn('Editor-ByteCount');
 
 const EditorByteCount = ({className, children}) => (
-  <div className={cnEditorByteCount({}, [className])}>{children}</div>
+  <span className={cnEditorByteCount({}, [className])}>{children}</span>
 );
 
 export default EditorByteCount;

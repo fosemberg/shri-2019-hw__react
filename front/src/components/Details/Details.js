@@ -16,6 +16,11 @@ import FileIconBase from "../../patterns/File/-Icon/File-Icon";
 import {FileIconTypeCode} from "../../patterns/File/-Icon/_type/File-Icon_type_code";
 import {FileIconTypeFile} from "../../patterns/File/-Icon/_type/File-Icon_type_file";
 import {FileIconTypeReadme} from "../../patterns/File/-Icon/_type/File-Icon_type_readme";
+import EditorByteCount from "../../patterns/Editor/-ByteCount/Editor-ByteCount";
+import EditorAction from "../../patterns/Editor/-Action/Editor-Action";
+import EditorBodyBase from "../../patterns/Editor/-Body/Editor-Body";
+import {EditorBodyColorMain} from "../../patterns/Editor/-Body/_color/Editor-Body_color_main";
+import DetailsContent from "./-Content/DetailsContent";
 
 
 const Section = compose(
@@ -35,6 +40,10 @@ const FileIcon = compose(
   FileIconTypeReadme,
 )(FileIconBase)
 
+const EditorBody = compose(
+  EditorBodyColorMain
+)(EditorBodyBase);
+
 const Details = ({data, fileName = 'fileName'}) => (
   <Section
     className={cnEditor({border: 'faded'})}
@@ -53,10 +62,17 @@ const Details = ({data, fileName = 'fileName'}) => (
           />
           {fileName}
         </File>
+        <EditorByteCount>
+          (4 347 bytes)
+        </EditorByteCount>
       </EditorHeaderItem>
-
+      <EditorHeaderItem>
+        <EditorAction/>
+      </EditorHeaderItem>
     </EditorHeader>
-    {data}
+    <EditorBody color={'main'}>
+    <DetailsContent data={data}/>
+    </EditorBody>
   </Section>
 )
 

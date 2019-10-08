@@ -5,7 +5,7 @@ import './Editor-Body.scss';
 export const cnEditorBody = cn('Editor-Body');
 
 const EditorBody = ({className, children}) => (
-  <div className={cnEditorBody({}, [className])}>{children}</div>
+  <table className={cnEditorBody({}, [className])}>{children}</table>
 );
 
 export default EditorBody;
