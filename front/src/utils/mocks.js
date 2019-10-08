@@ -118,6 +118,20 @@ const files = [
   }
 ]
 
+const file = `port os
+import sys
+import platform
+import json
+
+URLS = ['https://proxy.sandbox.yandex-team.ru/453818264' , 'http://storage-int.mds.yandex.net/get-sandbox/110738/by_platform.json.453815347']
+MD5 = '7f5a85f9c28d35c3a76d8cea7af51106'
+
+RETRIES = 5
+HASH_PREFIX = 10
+
+HOME_DIR = os.path.expanduser('~')
+`;
+
 export const getDataTest = (url) => {
   return new Promise((resolve, reject) => {
 
@@ -126,7 +140,7 @@ export const getDataTest = (url) => {
       .split('/')
       .pop()
       .indexOf('.')
-      ? 'content'
+      ? file
       : files;
     setTimeout(() => resolve(data), 1000)
   })

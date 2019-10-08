@@ -5,7 +5,7 @@ import './Editor-Row.scss';
 export const cnEditorRow = cn('Editor-Row');
 
 const EditorRow = ({className, children}) => (
-  <div className={cnEditorRow({}, [className])}>{children}</div>
+  <tr className={cnEditorRow({}, [className])}>{children}</tr>
 );
 
 export default EditorRow;

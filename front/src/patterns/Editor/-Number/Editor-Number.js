@@ -5,7 +5,7 @@ import './Editor-Number.scss';
 export const cnEditorNumber = cn('Editor-Number');
 
 const EditorNumber = ({className, children}) => (
-  <div className={cnEditorNumber({}, [className])}>{children}</div>
+  <td className={cnEditorNumber({}, [className])}>{children}</td>
 );
 
 export default EditorNumber;
