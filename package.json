@@ -4,6 +4,7 @@
   "description": "Проект создан исключительно в обучающих целях. Основная задача: повторить функциональность внутреннего проекта yandex: Arcanum.",
   "main": "index.js",
   "devDependencies": {
+    "lint-staged": "^6.1.1",
     "husky": "^2.1.0",
     "prettier": "^1.18.2",
     "stylelint": "^11.0.0",
@@ -16,6 +17,17 @@
   },
   "scripts": {
     "stylelint_all": "stylelint --fix front/src/**/*.scss"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
