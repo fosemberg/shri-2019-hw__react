@@ -126,7 +126,7 @@ app.get('/api/repos/:repositoryId/*',
             const name = arr[3].replace(path, '');
             const fileType =
               arr[1] === 'tree' ? 'dir' :
-              name.toUpperCase().includes('README') ? 'readme' :
+              name.toUpperCase().includes('README') || name.slice(-3) ==='.md' ? 'readme' :
               'file';
             return {
               num: arr[0],

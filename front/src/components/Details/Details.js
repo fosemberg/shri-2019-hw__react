@@ -24,7 +24,7 @@ const Details = (
   {
     data,
     fileName = 'fileName',
-    fileType = fileName.toUpperCase().includes('README') ? 'readme' : 'code',
+    fileType = fileName.toUpperCase().includes('README') || fileName.slice(-3) ==='.md' ? 'readme' : 'code',
   }
 ) => (
   <Section
