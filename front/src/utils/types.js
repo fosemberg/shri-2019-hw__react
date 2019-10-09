@@ -1,8 +1,8 @@
 export const Page = {
-  LOADING: 'LOADING',
-  FILES: 'FILES',
-  DETAILS: 'DETAILS',
-  REPOSITORIES: 'REPOSITORIES',
+  loader: 'LOADER',
+  files: 'FILES',
+  details: 'DETAILS',
+  repositories: 'REPOSITORIES',
 }
 
 export const FileType = {

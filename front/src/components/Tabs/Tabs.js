@@ -13,16 +13,16 @@ const Tabs = ({page}) => (
   <TabsView>
     <TabsItem state='active'>
       {
-        page === Page.FILES ? 'files' :
-        page === Page.DETAILS ? 'details' :
-        page === Page.REPOSITORIES ? 'repositories' :
+        page === Page.files ? 'files' :
+        page === Page.details ? 'details' :
+        page === Page.repositories ? 'repositories' :
         ''
       }
     </TabsItem>
     <TabsItem>
       {
-        page === Page.FILES ? 'branches' :
-        page === Page.DETAILS ? 'history' :
+        page === Page.files ? 'branches' :
+        page === Page.details ? 'history' :
         ''
       }
     </TabsItem>

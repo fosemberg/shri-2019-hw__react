@@ -36,7 +36,7 @@ const SelectName = compose(
 const BranchInfo = ({repositoryName, page}) => (
   <BranchInfoView border='bottom'>
     {
-      page !== Page.REPOSITORIES &&
+      page !== Page.repositories &&
       <>
         <BranchInfoHeader>
           <BranchInfoName>

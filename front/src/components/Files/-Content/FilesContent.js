@@ -16,7 +16,6 @@ import {FileType} from "../../../utils/types";
 
 const FilesContent = ({data}) => {
   const pathname = usePathname();
-  console.log(pathname);
   return <>
     {
       data.map(
@@ -31,11 +30,7 @@ const FilesContent = ({data}) => {
           <TableRow key={name}>
             <TableCell>
               <RouterLink
-                to={
-                  fileType === FileType.dir
-                    ? `${pathname}${name}`
-                    : `${pathname}${name}`
-                }
+                to={`${pathname}${name}`}
                 className={cnFile({type: 'dir'}, [cnLink()])}
               >
                 <div className="file__icon file__icon_type_${fileType}"></div>

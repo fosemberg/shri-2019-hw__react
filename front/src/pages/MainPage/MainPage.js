@@ -17,6 +17,7 @@ import Details from "../../components/Details/Details";
 import {urlToArray, usePathname} from "../../utils/helpers";
 import RepositoriesTable from "../../components/RepositoriesTable/RepositoriesTable";
 import {Page} from "../../utils/types";
+import Loader from "../../components/Loader/Loader";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -30,21 +31,21 @@ const LayoutContainer = compose(
 )(LayoutContainerBase)
 
 const MainPage = ({getData}) => {
-  const [page, setPage] = useState(Page.LOADING);
+  const [page, setPage] = useState(Page.loader);
   const [data, setData] = useState({});
   const pathname = usePathname();
   const urlArr = urlToArray(pathname);
   const repositoryName = urlArr[0] || '';
 
   useEffect(() => {
-    setPage(Page.LOADING);
+    setPage(Page.loader);
     setData({});
     getData(pathname).then(
       json => {
         setData(json);
         setPage(
-          pathname === '/' ? Page.REPOSITORIES :
-            Array.isArray(json) ? Page.FILES : Page.DETAILS
+          pathname === '/' ? Page.repositories :
+            Array.isArray(json) ? Page.files : Page.details
         )
       }
     )
@@ -60,13 +61,13 @@ const MainPage = ({getData}) => {
     <Layout>
       <Header repositoryName={repositoryName}/>
       <LayoutContainer grow>
-        {page !== Page.REPOSITORIES && <BreadCrumbs repositoryNaeme={repositoryName}/>}
+        {page !== Page.repositories && <BreadCrumbs repositoryNaeme={repositoryName}/>}
         <BranchInfo repositoryName={repositoryName} page={page}/>
         {
-          page === Page.LOADING ? <div>Loading...</div> :
-          page === Page.FILES ? <Files data={data}/> :
-          page === Page.DETAILS ? <Details data={data}/> :
-          page === Page.REPOSITORIES ? <RepositoriesTable data={data}/> :
+          page === Page.loader ? <Loader/> :
+          page === Page.files ? <Files data={data}/> :
+          page === Page.details ? <Details data={data}/> :
+          page === Page.repositories ? <RepositoriesTable data={data}/> :
           ''
         }
       </LayoutContainer>

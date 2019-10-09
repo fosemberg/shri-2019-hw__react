@@ -19,7 +19,7 @@ const DetailsContent = ({data}) => (
         .map((stroke, key) =>
           <EditorRow key={key}>
             <EditorNumber>
-              {key}
+              {key + 1}
             </EditorNumber>
             <EditorLine>
               {stroke.replace(/ /g, "\u00a0")}
