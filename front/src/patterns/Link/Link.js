@@ -4,8 +4,8 @@ import './Link.scss';
 
 export const cnLink = cn('Link');
 
-const Link = ({className, children}) => (
-  <a className={cnLink({}, [className])}>{children}</a>
+const Link = ({className, children, href = '#'}) => (
+  <a href={href} className={cnLink({}, [className])}>{children}</a>
 );
 
 export default Link;

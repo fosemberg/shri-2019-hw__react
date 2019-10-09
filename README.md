@@ -20,6 +20,9 @@ npm i &&
 npm run start
 ```
 
+Перейти на:
+http://localhost:3006/
+
 ### Более подробное описание заданий
 - [Реакт](docs/react/react__README.md)
 
