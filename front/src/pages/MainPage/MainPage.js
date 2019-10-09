@@ -36,14 +36,15 @@ const MainPage = ({getData}) => {
   useEffect(() => {
     setIsLoaded(false);
     setData({});
+    getData(pathname).then(
+      json => {
+        setData(json);
+        setIsLoaded(true);
+      }
+    )
   }, [pathname])
 
-  getData(pathname).then(
-    json => {
-      setData(json);
-      setIsLoaded(true);
-    }
-  )
+
 
   const isFiles = Array.isArray(data);
   return <Theme
@@ -71,4 +72,4 @@ const MainPage = ({getData}) => {
   </Theme>
 }
 
-export default MainPage;
+export default memo(MainPage);

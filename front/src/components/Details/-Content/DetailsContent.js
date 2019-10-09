@@ -13,7 +13,8 @@ const EditorBody = compose(
 const DetailsContent = ({data}) => (
   <EditorBody color={'main'}>
     {
-      data
+      Array.isArray(data)
+        ? data
         .split('\n')
         .map((stroke, key) =>
           <EditorRow key={key}>
@@ -25,6 +26,7 @@ const DetailsContent = ({data}) => (
             </EditorLine>
           </EditorRow>
         )
+        : ''
     }
   </EditorBody>
 )

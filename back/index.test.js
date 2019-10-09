@@ -21,11 +21,11 @@ const checkUrl = (
         });
 };
 
-checkUrl(`/api/repos/${repositoryId}`, `delete`)
-    .finally(() => checkUrl(`/api/repos`, `post`, {url}))
-    .finally(() => checkUrl(`/api/repos/${repositoryId}`, `delete`))
-    .finally(() => checkUrl(`/api/repos`, `post`, {url}))
-    .finally(() => checkUrl(`/api/repos`))
+// checkUrl(`/api/repos/${repositoryId}`, `delete`)
+    // .finally(() => checkUrl(`/api/repos`, `post`, {url}))
+    // .finally(() => checkUrl(`/api/repos/${repositoryId}`, `delete`))
+    // .finally(() => checkUrl(`/api/repos`, `post`, {url}))
+checkUrl(`/api/repos`)
     .finally(() => checkUrl(`/api/repos/${repositoryId}/commits/master`))
     .finally(() => checkUrl(`/api/repos/${repositoryId}/commits/master/diff`))
     .finally(() => checkUrl(`/api/repos/${repositoryId}`))
