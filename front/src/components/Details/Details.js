@@ -20,13 +20,19 @@ const EditorBody = compose(
   EditorBodyColorMain
 )(EditorBodyBase);
 
-const Details = ({data, fileName = 'fileName'}) => (
+const Details = (
+  {
+    data,
+    fileName = 'fileName',
+    fileType = fileName.toUpperCase().includes('README') ? 'readme' : 'code',
+  }
+) => (
   <Section
     className={cnEditor({border: 'faded'})}
     indentT='m'
     indentB='m'
   >
-    <DetailsHeader fileName={fileName}/>
+    <DetailsHeader fileName={fileName} fileType={fileType}/>
     <DetailsContent data={data}/>
   </Section>
 )

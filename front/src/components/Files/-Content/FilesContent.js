@@ -13,6 +13,17 @@ import "../../../patterns/File/_type/File_type_file.scss";
 import User from "../../../patterns/User/User";
 import {generateGetFileUrl, usePathname} from "../../../utils/helpers";
 import {FileType} from "../../../utils/types";
+import FileIconBase from "../../../patterns/File/-Icon/File-Icon";
+import {compose} from "@bem-react/core";
+import {FileIconTypeFile} from "../../../patterns/File/-Icon/_type/File-Icon_type_file";
+import {FileIconTypeDir} from "../../../patterns/File/-Icon/_type/File-Icon_type_dir";
+import {FileIconTypeReadme} from "../../../patterns/File/-Icon/_type/File-Icon_type_readme";
+
+const FileIcon = compose(
+  FileIconTypeFile,
+  FileIconTypeDir,
+  FileIconTypeReadme,
+)(FileIconBase);
 
 const FilesContent = ({data}) => {
   const pathname = usePathname();
@@ -33,7 +44,7 @@ const FilesContent = ({data}) => {
                 to={`${pathname}${name}`}
                 className={cnFile({type: 'dir'}, [cnLink()])}
               >
-                <div className="file__icon file__icon_type_${fileType}"></div>
+                <FileIcon type={fileType}/>
                 {name}
               </RouterLink>
             </TableCell>

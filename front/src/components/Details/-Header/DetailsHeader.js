@@ -25,7 +25,7 @@ const FileIcon = compose(
   FileIconTypeReadme,
 )(FileIconBase)
 
-const DetailsHeader = ({fileName}) => (
+const DetailsHeader = ({fileName, fileType = 'code'}) => (
   <EditorHeader
       color={'default'}
       spaceH={'m'}
@@ -34,7 +34,7 @@ const DetailsHeader = ({fileName}) => (
       <EditorHeaderItem>
         <File>
           <FileIcon
-            type={'code'}
+            type={fileType}
           />
           {fileName}
         </File>

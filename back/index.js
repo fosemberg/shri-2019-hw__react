@@ -123,11 +123,16 @@ app.get('/api/repos/:repositoryId/*',
       out => arrayFromOut(out)
         .map(str => {
             const arr = str.replace('	', ' ').split(' ');
+            const name = arr[3].replace(path, '');
+            const fileType =
+              arr[1] === 'tree' ? 'dir' :
+              name.toUpperCase().includes('README') ? 'readme' :
+              'file';
             return {
               num: arr[0],
-              fileType: arr[1] === 'tree' ? 'dir' : 'file',
+              fileType,
               lastCommit: arr[2].substring(0, 6),
-              name: arr[3].replace(path, ''),
+              name,
               commitMessage: '[vcs] move http to arc',
               committer: 'noxoomo',
               updated: '4 s ago'

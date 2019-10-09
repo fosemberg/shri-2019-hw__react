@@ -33,6 +33,7 @@ const LayoutContainer = compose(
 const MainPage = ({getData}) => {
   const [page, setPage] = useState(Page.loader);
   const [data, setData] = useState({});
+  const [fileName, setFileName] = useState('');
   const pathname = usePathname();
   const urlArr = urlToArray(pathname);
   const repositoryName = urlArr[0] || '';
@@ -43,10 +44,10 @@ const MainPage = ({getData}) => {
     getData(pathname).then(
       json => {
         setData(json);
-        setPage(
-          pathname === '/' ? Page.repositories :
+        const _page = pathname === '/' ? Page.repositories :
             Array.isArray(json) ? Page.files : Page.details
-        )
+        _page === Page.details && setFileName(urlArr.pop());
+        setPage(_page)
       }
     )
   }, [pathname])
@@ -66,7 +67,7 @@ const MainPage = ({getData}) => {
         {
           page === Page.loader ? <Loader/> :
           page === Page.files ? <Files data={data}/> :
-          page === Page.details ? <Details data={data}/> :
+          page === Page.details ? <Details data={data} fileName={fileName}/> :
           page === Page.repositories ? <RepositoriesTable data={data}/> :
           ''
         }
