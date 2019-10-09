@@ -1,3 +1,4 @@
 # shri-2019-hw__react
 
-[TЗ](TASK.md)
+[TЗ](react__TASK.md)
+
