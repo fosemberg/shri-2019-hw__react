@@ -1,24 +1,28 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import MainPage from "../../pages/MainPage/MainPage";
 import {getDataTest} from "../../utils/mocks";
+import {generateGetFileUrl, urlToArray} from "../../utils/helpers";
+import {FileType} from "../../utils/types";
 
 const getData = (url) => {
-  console.log(url);
-  const _url = `http://localhost:3009/api/repos/server-info${url}`;
-  // return fetch(`${host}/${pathToFiles}/`)
-  return fetch(`${_url}`).then(res => res.json());
+  const urlArr = urlToArray(url);
+  const target = urlArr.pop();
+  const fileType = target && ~target.indexOf('.') ? FileType.file : FileType.dir;
+  const prefix = 'http://localhost:3009/api/repos';
 
-  // return new Promise((resolve, reject) => {
-  //   setTimeout(() => resolve({}), 1000)
-  // })
+  let _url = fileType === FileType.file
+    ? generateGetFileUrl(url)
+    : url;
+  _url = `${prefix}${_url}`;
+  return fetch(`${_url}`).then(res => res.json());
 }
 
 const App = () => (
-    <BrowserRouter>
+  <BrowserRouter>
     <MainPage getData={getData}/>
-    </BrowserRouter>
+  </BrowserRouter>
 );
 
 export default App;

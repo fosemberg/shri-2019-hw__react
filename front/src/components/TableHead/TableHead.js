@@ -3,18 +3,10 @@ import TableRow from "../../patterns/Table/-Row/Table-Row";
 import TableCell from "../../patterns/Table/-Cell/Table-Cell";
 import TableHeadBase from "../../patterns/Table/-Head/Table-Head";
 
-const headerMock = [
-  'name',
-  'Last commit',
-  'Commit message',
-  'Committer',
-  'Updated'
-]
-
-const TableHead = () =>
+const TableHead = ({names = ['']}) =>
   <TableHeadBase>
     <TableRow>
-      {headerMock.map(headerName =>
+      {names.map(headerName =>
         <TableCell key={headerName}>{headerName}</TableCell>
       )}
     </TableRow>

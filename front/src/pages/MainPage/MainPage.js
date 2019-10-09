@@ -14,7 +14,9 @@ import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import BranchInfo from "../../components/BranchInfo/BranchInfo";
 import Files from "../../components/Files/Files";
 import Details from "../../components/Details/Details";
-import {usePathname} from "../../utils/helpers";
+import {urlToArray, usePathname} from "../../utils/helpers";
+import RepositoriesTable from "../../components/RepositoriesTable/RepositoriesTable";
+import {Page} from "../../utils/types";
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -28,25 +30,26 @@ const LayoutContainer = compose(
 )(LayoutContainerBase)
 
 const MainPage = ({getData}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [page, setPage] = useState(Page.LOADING);
   const [data, setData] = useState({});
   const pathname = usePathname();
-  const repositoryName = pathname.split('/').filter(x => x && x !== "")[0] || '';
+  const urlArr = urlToArray(pathname);
+  const repositoryName = urlArr[0] || '';
 
   useEffect(() => {
-    setIsLoaded(false);
+    setPage(Page.LOADING);
     setData({});
     getData(pathname).then(
       json => {
         setData(json);
-        setIsLoaded(true);
+        setPage(
+          pathname === '/' ? Page.REPOSITORIES :
+            Array.isArray(json) ? Page.FILES : Page.DETAILS
+        )
       }
     )
   }, [pathname])
 
-
-
-  const isFiles = Array.isArray(data);
   return <Theme
     space='default'
     size='default'
@@ -58,13 +61,13 @@ const MainPage = ({getData}) => {
       <Header repositoryName={repositoryName}/>
       <LayoutContainer grow>
         <BreadCrumbs repositoryNaeme={repositoryName}/>
-        <BranchInfo repositoryName={repositoryName} isFiles={isFiles}/>
+        <BranchInfo repositoryName={repositoryName} page={page}/>
         {
-          isLoaded
-            ? isFiles
-              ? <Files data={data}/>
-              : <Details data={data}/>
-            : <div>Loading...</div>
+          page === Page.LOADING ? <div>Loading...</div> :
+          page === Page.FILES ? <Files data={data}/> :
+          page === Page.DETAILS ? <Details data={data}/> :
+          page === Page.REPOSITORIES ? <RepositoriesTable data={data}/> :
+          ''
         }
       </LayoutContainer>
       <Footer/>

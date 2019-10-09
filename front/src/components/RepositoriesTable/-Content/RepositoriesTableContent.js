@@ -11,49 +11,26 @@ import "../../../patterns/File/_type/File_type_branch.scss";
 import "../../../patterns/File/_type/File_type_dir.scss";
 import "../../../patterns/File/_type/File_type_file.scss";
 import User from "../../../patterns/User/User";
-import {generateGetFileUrl, usePathname} from "../../../utils/helpers";
-import {FileType} from "../../../utils/types";
+import {usePathname} from "../../../utils/helpers";
 
-const FilesContent = ({data}) => {
+const RepositoriesTableContent = ({data}) => {
   const pathname = usePathname();
-  console.log(pathname);
   return <>
     {
       data.map(
-        ({
-           fileType,
-           name,
-           lastCommit,
-           commitMessage,
-           committer,
-           updated
-         }, key) =>
-          <TableRow key={name}>
+        (name, key) =>
+          <TableRow key={key}>
             <TableCell>
-              <RouterLink
-                to={
-                  fileType === FileType.dir
-                    ? `${pathname}${name}`
-                    : `${pathname}${name}`
-                }
-                className={cnFile({type: 'dir'}, [cnLink()])}
-              >
+              <RouterLink to={`${pathname}${name}`} className={cnFile({type: 'dir'}, [cnLink()])}>
                 <div className="file__icon file__icon_type_${fileType}"></div>
                 {name}
               </RouterLink>
             </TableCell>
-            <TableCell>
-              <LinkBase>
-                {lastCommit}
-              </LinkBase>
-            </TableCell>
-            <TableCell>{commitMessage}</TableCell>
-            <TableCell><User>{committer}</User></TableCell>
-            <TableCell>{updated}</TableCell>
+            <TableCell colSpan={4}/>
           </TableRow>
       )
     }
   </>
 };
 
-export default memo(FilesContent);
+export default memo(RepositoriesTableContent);

@@ -60,31 +60,6 @@ app.get('/api/repos/:repositoryId/commits/:commitHash/diff',
 
 //    ({params: {repositoryId, commitHash, 0: path}}, res) =>
 
-app.get('/api/repos/:repositoryId/*',
-  ({params: {repositoryId, 0: path}}, res) => {
-    console.log(`git ls-tree HEAD ${path ? path + '/' : ''}`);
-    return execCommandWithRes(
-      `cd ${PATH_TO_REPOS}/${repositoryId} &&
-            git ls-tree HEAD ${path ? path : ''}`,
-      res,
-      out => arrayFromOut(out)
-        .map(str => {
-            const arr = str.replace('	', ' ').split(' ');
-            return {
-              num: arr[0],
-              fileType: arr[1] === 'tree' ? 'dir' : 'file',
-              lastCommit: arr[2].substring(0, 6),
-              name: arr[3].replace(path, ''),
-              commitMessage: '[vcs] move http to arc',
-              committer: 'noxoomo',
-              updated: '4 s ago'
-            }
-          }
-        )
-    )
-  }
-);
-
 app.get('/api/repos/:repositoryId/tree/:commitHash',
   ({params: {repositoryId, commitHash}}, res) =>
     execCommandWithRes(
@@ -111,6 +86,23 @@ app.get('/api/repos/:repositoryId/tree/:commitHash/*',
 // Возвращает содержимое конкретного файла, находящегося по пути pathToFile в ветке (или по хэшу коммита) branchName. С используемой памятью должно быть все в порядке.
 //     Примеры:
 // /api/repos/cool-timer/blob/cool-branch/src/components/Header/index.tsx
+app.get('/api/repos/:repositoryId/blob/master/*',
+  ({params: {repositoryId, 0: path}}, res) =>
+  {
+    console.log(`cd ${PATH_TO_REPOS}/${repositoryId} &&
+            cat ${path}`);
+    return execCommandWithRes(
+      `cd ${PATH_TO_REPOS}/${repositoryId} &&
+            cat ${path}`,
+      res
+    )
+    }
+);
+
+// GET /api/repos/:repositoryId/blob/:commitHash/:pathToFile
+// Возвращает содержимое конкретного файла, находящегося по пути pathToFile в ветке (или по хэшу коммита) branchName. С используемой памятью должно быть все в порядке.
+//     Примеры:
+// /api/repos/cool-timer/blob/cool-branch/src/components/Header/index.tsx
 app.get('/api/repos/:repositoryId/blob/:commitHash/*',
   ({params: {repositoryId, commitHash, 0: path}}, res) =>
     execCommandWithRes(
@@ -119,6 +111,31 @@ app.get('/api/repos/:repositoryId/blob/:commitHash/*',
             cat ${path}`,
       res
     )
+);
+
+app.get('/api/repos/:repositoryId/*',
+  ({params: {repositoryId, 0: path}}, res) => {
+    console.log(`git ls-tree HEAD ${path ? path + '/' : ''}`);
+    return execCommandWithRes(
+      `cd ${PATH_TO_REPOS}/${repositoryId} &&
+            git ls-tree HEAD ${path ? path : ''}`,
+      res,
+      out => arrayFromOut(out)
+        .map(str => {
+            const arr = str.replace('	', ' ').split(' ');
+            return {
+              num: arr[0],
+              fileType: arr[1] === 'tree' ? 'dir' : 'file',
+              lastCommit: arr[2].substring(0, 6),
+              name: arr[3].replace(path, ''),
+              commitMessage: '[vcs] move http to arc',
+              committer: 'noxoomo',
+              updated: '4 s ago'
+            }
+          }
+        )
+    )
+  }
 );
 
 // DELETE /api/repos/:repositoryId
