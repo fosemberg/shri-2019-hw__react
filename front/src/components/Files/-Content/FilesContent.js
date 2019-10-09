@@ -1,7 +1,8 @@
-import React, {useState, useEffect, memo} from "react";
+import React, {memo} from "react";
 import TableRow from "../../../patterns/Table/-Row/Table-Row";
 import TableCell from "../../../patterns/Table/-Cell/Table-Cell";
-import {Link as RouterLink, withRouter} from "react-router-dom";
+import {Link as RouterLink}
+from "react-router-dom";
 import LinkBase from "../../../patterns/Link/Link";
 import {cnLink} from "../../../patterns/Link/Link";
 import "../../../patterns/Link/Link.scss";
@@ -11,8 +12,7 @@ import "../../../patterns/File/_type/File_type_branch.scss";
 import "../../../patterns/File/_type/File_type_dir.scss";
 import "../../../patterns/File/_type/File_type_file.scss";
 import User from "../../../patterns/User/User";
-import {generateGetFileUrl, usePathname} from "../../../utils/helpers";
-import {FileType} from "../../../utils/types";
+import {usePathname} from "../../../utils/helpers";
 import FileIconBase from "../../../patterns/File/-Icon/File-Icon";
 import {compose} from "@bem-react/core";
 import {FileIconTypeFile} from "../../../patterns/File/-Icon/_type/File-Icon_type_file";
@@ -37,7 +37,7 @@ const FilesContent = ({data}) => {
            commitMessage,
            committer,
            updated
-         }, key) =>
+         }) =>
           <TableRow key={name}>
             <TableCell>
               <RouterLink

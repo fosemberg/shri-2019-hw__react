@@ -6,8 +6,6 @@ import {SectionIndentBM} from "../../patterns/Section/_indent-b/Section_indent-b
 import {cnEditor} from "../../patterns/Editor/Editor";
 import "../../patterns/Editor/Editor.scss";
 import "../../patterns/Editor/_border/Editor_border_faded.scss";
-import EditorBodyBase from "../../patterns/Editor/-Body/Editor-Body";
-import {EditorBodyColorMain} from "../../patterns/Editor/-Body/_color/Editor-Body_color_main";
 import DetailsContent from "./-Content/DetailsContent";
 import DetailsHeader from "./-Header/DetailsHeader";
 
@@ -15,10 +13,6 @@ const Section = compose(
   SectionIndentTM,
   SectionIndentBM,
 )(SectionBase);
-
-const EditorBody = compose(
-  EditorBodyColorMain
-)(EditorBodyBase);
 
 const Details = (
   {
@@ -35,6 +29,6 @@ const Details = (
     <DetailsHeader fileName={fileName} fileType={fileType}/>
     <DetailsContent data={data}/>
   </Section>
-)
+);
 
 export default Details;
