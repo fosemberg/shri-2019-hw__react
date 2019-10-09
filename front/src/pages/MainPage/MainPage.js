@@ -60,7 +60,7 @@ const MainPage = ({getData}) => {
     <Layout>
       <Header repositoryName={repositoryName}/>
       <LayoutContainer grow>
-        <BreadCrumbs repositoryNaeme={repositoryName}/>
+        {page !== Page.REPOSITORIES && <BreadCrumbs repositoryNaeme={repositoryName}/>}
         <BranchInfo repositoryName={repositoryName} page={page}/>
         {
           page === Page.LOADING ? <div>Loading...</div> :

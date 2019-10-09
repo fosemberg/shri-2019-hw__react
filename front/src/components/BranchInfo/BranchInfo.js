@@ -19,6 +19,7 @@ import {SelectArrowPositionBaseline} from "../../patterns/Select/-Arrow/_positio
 import SelectNameBase from "../../patterns/Select/-Name/Select-Name";
 import {SelectNameColorSecondary} from "../../patterns/Select/-Name/_color/Select-Name_color_secondary";
 import BranchInfoContent from "./-Content/BranchInfo-Content";
+import {Page} from "../../utils/types";
 
 const BranchInfoView = compose(
   BranchInfoBorderBottom
@@ -34,20 +35,25 @@ const SelectName = compose(
 
 const BranchInfo = ({repositoryName, page}) => (
   <BranchInfoView border='bottom'>
-    <BranchInfoHeader>
-      <BranchInfoName>
-        {repositoryName}
-      </BranchInfoName>
-      <BranchInfoSelect className={cnSelect({size: 'big'})}>
-        <SelectName color='secondary'>
-          trunk
-        </SelectName>
-        <SelectArrow position='baseline' className={cnArrow({'state': 'down', 'color': 'secondary'})}/>
-      </BranchInfoSelect>
-      <BranchInfoSearch>
-      </BranchInfoSearch>
-    </BranchInfoHeader>
-    <BranchInfoContent/>
+    {
+      page !== Page.REPOSITORIES &&
+      <>
+        <BranchInfoHeader>
+          <BranchInfoName>
+            {repositoryName}
+          </BranchInfoName>
+          <BranchInfoSelect className={cnSelect({size: 'big'})}>
+            <SelectName color='secondary'>
+              trunk
+            </SelectName>
+            <SelectArrow position='baseline' className={cnArrow({'state': 'down', 'color': 'secondary'})}/>
+          </BranchInfoSelect>
+          <BranchInfoSearch>
+          </BranchInfoSearch>
+        </BranchInfoHeader>
+        <BranchInfoContent/>
+      </>
+    }
     <Tabs page={page}/>
   </BranchInfoView>
 );
