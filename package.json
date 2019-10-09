@@ -35,6 +35,10 @@
     "*.scss": [
       "stylelint --fix",
       "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
     ]
   },
   "husky": {
