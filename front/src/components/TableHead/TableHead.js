@@ -6,8 +6,8 @@ import TableHeadBase from "../../patterns/Table/-Head/Table-Head";
 const TableHead = ({names = ['']}) =>
   <TableHeadBase>
     <TableRow>
-      {names.map(headerName =>
-        <TableCell key={headerName}>{headerName}</TableCell>
+      {names.map((headerName, key) =>
+        <TableCell key={key}>{headerName}</TableCell>
       )}
     </TableRow>
   </TableHeadBase>

@@ -12,6 +12,9 @@ import HeaderLogo from "../../patterns/Header/-Logo/Header-Logo";
 import HeaderSelect from "../../patterns/Header/-Select/Header-Select";
 import {SelectNameWeightBold} from "../../patterns/Select/-Name/_weight/Select-Name_weight_bold";
 import {SelectArrowPositionCenter} from "../../patterns/Select/-Arrow/_position/Select-Arrow_position_center";
+import {Link} from "react-router-dom";
+import {cnLink} from "../../patterns/Link/Link";
+import "../../patterns/Link/Link.scss";
 
 const SelectName = compose(
   SelectNameWeightBold,
@@ -21,15 +24,18 @@ const SelectArrow = compose(
   SelectArrowPositionCenter,
 )(SelectArrowBase)
 
+
 const Header = ({repositoryName}) => (
-  <HeaderBase>
-    <HeaderLogo/>
-    <HeaderSelect className={cnSelect()}>
-      <SelectName weight='bold'>Repository</SelectName>
-      <SelectName>{repositoryName}</SelectName>
-      <SelectArrow className={cnArrow({state: 'down'})} position='center'/>
-    </HeaderSelect>
-  </HeaderBase>
+  <Link to={'/'} className={cnLink()}>
+    <HeaderBase>
+      <HeaderLogo/>
+      <HeaderSelect className={cnSelect()}>
+        <SelectName weight='bold'>Repository</SelectName>
+        <SelectName>{repositoryName}</SelectName>
+        <SelectArrow className={cnArrow({state: 'down'})} position='center'/>
+      </HeaderSelect>
+    </HeaderBase>
+  </Link>
 );
 
 export default Header;

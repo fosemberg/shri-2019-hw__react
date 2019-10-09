@@ -18,8 +18,8 @@ const RepositoriesTableContent = ({data}) => {
   return <>
     {
       data.map(
-        (name, key) =>
-          <TableRow key={key}>
+        (name) =>
+          <TableRow key={name}>
             <TableCell>
               <RouterLink to={`${pathname}${name}`} className={cnFile({type: 'dir'}, [cnLink()])}>
                 <div className="file__icon file__icon_type_${fileType}"></div>
