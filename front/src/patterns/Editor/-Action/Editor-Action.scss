@@ -1,12 +1,12 @@
 .Editor {
   &-Action {
-        width: 38px;
-        height: 28px;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        background-image: url('download.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+    box-sizing: border-box;
+    width: 38px;
+    height: 28px;
+    background-image: url("download.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
 }

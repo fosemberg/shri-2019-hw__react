@@ -1,42 +1,12 @@
 .Editor {
-    border-radius: 4px;
-    position: relative;
-    margin-left: var(--space-xxl);
-    margin-right: var(--space-xxl);
+  position: relative;
+  margin-right: var(--space-xxl);
+  margin-left: var(--space-xxl);
+  border-radius: 4px;
 
-    
-
-    
-
-    @media screen and (max-width: 600px) {
-        border: none;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+  @media screen and (max-width: 600px) {
+    margin-right: 0;
+    margin-left: 0;
+    border: none;
+  }
 }

@@ -1,19 +1,15 @@
 .Editor {
   &-Body {
-        box-sizing: border-box;
-        width: 100%;
-        font-family: var(--editor-font);
-        font-size: var(--font-xxs);
-        line-height: var(--line-m);
-        margin-top: var(--space-xxxxs);
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: var(--space-xxxxs);
+    font-size: var(--font-xxs);
+    font-family: var(--editor-font);
+    line-height: var(--line-m);
 
-        
-
-        
-
-        @media screen and (max-width: 600px) {
-            padding-left: var(--space-m);
-            padding-right: var(--space-m);
-        }
+    @media screen and (max-width: 600px) {
+      padding-right: var(--space-m);
+      padding-left: var(--space-m);
     }
+  }
 }

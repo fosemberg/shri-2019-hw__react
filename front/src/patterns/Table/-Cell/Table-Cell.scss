@@ -1,35 +1,31 @@
 .Table {
   &-Cell {
-        padding: var(--space-m) 0 var(--space-s);
-        text-align: left;
-        font-weight: normal;
+    padding: var(--space-m) 0 var(--space-s);
+    font-weight: normal;
+    text-align: left;
 
-        &:nth-of-type(1) {
-            width: 16%;
-        }
-
-        &:nth-of-type(2) {
-            width: 17%;
-        }
-
-        &:nth-of-type(3) {
-            width: 31%;
-        }
-
-        &:nth-of-type(4) {
-            width: 10%;
-        }
-
-        &:nth-of-type(5) {
-            width: 15%;
-        }
-
-        &:last-child {
-            text-align: right;
-        }
-
-        
-
-        
+    &:nth-of-type(1) {
+      width: 16%;
     }
+
+    &:nth-of-type(2) {
+      width: 17%;
+    }
+
+    &:nth-of-type(3) {
+      width: 31%;
+    }
+
+    &:nth-of-type(4) {
+      width: 10%;
+    }
+
+    &:nth-of-type(5) {
+      width: 15%;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
 }

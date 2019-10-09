@@ -1,12 +1,12 @@
 .Editor {
   &-Line {
-        overflow: visible;
-        text-align: left;
-        padding: 0 0 0 var(--space-xxl);
-        word-break: break-all;
+    padding: 0 0 0 var(--space-xxl);
+    overflow: visible;
+    text-align: left;
+    word-break: break-all;
 
-        @media screen and (max-width: 600px) {
-            padding: 0 0 0 var(--space-s);
-        }
+    @media screen and (max-width: 600px) {
+      padding: 0 0 0 var(--space-s);
     }
+  }
 }

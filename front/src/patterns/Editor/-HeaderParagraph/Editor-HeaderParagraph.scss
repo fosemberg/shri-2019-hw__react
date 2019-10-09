@@ -1,9 +1,9 @@
 .Editor {
   &-HeaderParagraph {
-        margin: 0;
-        display: block;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }

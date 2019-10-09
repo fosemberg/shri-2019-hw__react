@@ -1,11 +1,11 @@
 .Editor-Body {
   &_border_collapse {
-            border-collapse: collapse;
+    border-collapse: collapse;
 
-            & .editor-number {
-                @media screen and (max-width: 600px) {
-                    width: 27px;
-                }
-            }
-        }
+    & .editor-number {
+      @media screen and (max-width: 600px) {
+        width: 27px;
+      }
+    }
+  }
 }

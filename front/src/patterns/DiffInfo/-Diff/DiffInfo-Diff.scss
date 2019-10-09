@@ -1,9 +1,9 @@
 .DiffInfo {
   &-Diff {
-        width: 40%;
+    width: 40%;
 
-        @media screen and (max-width: 600px) {
-            width: 100%;
-        }
+    @media screen and (max-width: 600px) {
+      width: 100%;
     }
+  }
 }

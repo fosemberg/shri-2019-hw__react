@@ -1,20 +1,16 @@
 .Footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: var(--space-m) var(--space-xxl) 18px;
-    font-family: var(--font);
-    font-size: var(--font-xs);
-    line-height: var(--line-s);
-    color: var(--secondary);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-m) var(--space-xxl) 18px;
+  color: var(--secondary);
+  font-size: var(--font-xs);
+  font-family: var(--font);
+  line-height: var(--line-s);
 
-    @media screen and (max-width: 700px) {
-        padding: var(--space-m) var(--space-m) 18px;
-        display: none;
-    }
-
-
-
-
+  @media screen and (max-width: 700px) {
+    display: none;
+    padding: var(--space-m) var(--space-m) 18px;
+  }
 }

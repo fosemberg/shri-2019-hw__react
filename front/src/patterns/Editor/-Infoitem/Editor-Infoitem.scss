@@ -1,9 +1,9 @@
 .Editor {
   &-Infoitem {
-        margin-right: var(--space-m);
+    margin-right: var(--space-m);
 
-        &:last-of-type {
-            margin-right: 0;
-        }
+    &:last-of-type {
+      margin-right: 0;
     }
+  }
 }

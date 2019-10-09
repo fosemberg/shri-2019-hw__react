@@ -2,11 +2,13 @@
   &-Link {
     position: absolute;
     right: 0;
+
     &:after {
-      content: '';
+      content: "";
       width: 16px;
       height: 16px;
       visibility: visible;
-      background-image: url('code.svg');
+      background-image: url("code.svg");
     }
+  }
 }

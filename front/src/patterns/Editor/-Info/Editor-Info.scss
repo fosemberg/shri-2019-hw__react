@@ -1,11 +1,11 @@
 .Editor {
   &-Info {
-        display: flex;
+    display: flex;
 
-        @media screen and (max-width: 600px) {
-            width: 100%;
-            justify-content: space-between;
-            margin-top: var(--space-xs);
-        }
+    @media screen and (max-width: 600px) {
+      justify-content: space-between;
+      width: 100%;
+      margin-top: var(--space-xs);
     }
+  }
 }

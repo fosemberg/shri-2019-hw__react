@@ -1,17 +1,9 @@
 .Table {
-    width: 100%;
-    font-family: var(--font);
-    font-size: var(--font-s);
-    line-height: var(--line-m);
-    color: var(--primary);
-    box-sizing: border-box;
-    border-collapse: collapse;
-
-    
-
-    
-
-    
-
-    
+  box-sizing: border-box;
+  width: 100%;
+  color: var(--primary);
+  font-size: var(--font-s);
+  font-family: var(--font);
+  line-height: var(--line-m);
+  border-collapse: collapse;
 }

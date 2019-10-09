@@ -1,10 +1,10 @@
 .BreadCrumbs {
   &-Item {
     &:after {
-      content: '/';
-      margin: 0 var(--space-s);
       position: relative;
       top: 1px;
+      margin: 0 var(--space-s);
+      content: "/";
     }
 
     &:only-of-type {
@@ -12,12 +12,12 @@
     }
 
     &:last-of-type {
-      font-weight: bold;
       color: var(--primary);
+      font-weight: bold;
 
       &:after {
-        content: '';
         margin: 0;
+        content: "";
       }
     }
   }

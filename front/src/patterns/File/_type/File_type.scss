@@ -1,10 +1,11 @@
 .File {
   &_type {
-        &_dir, &_branch {
-            font-weight: bold;
-        }
-
-        &_file {
-        }
+    &_dir,
+    &_branch {
+      font-weight: bold;
     }
+
+    &_file {
+    }
+  }
 }

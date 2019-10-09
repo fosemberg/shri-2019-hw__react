@@ -1,13 +1,9 @@
 .BranchInfo {
   &-Header {
-        display: flex;
+    display: flex;
 
-        @media screen and (max-width: 600px) {
-            flex-wrap: wrap;
-        }
-
-        
-
-        
+    @media screen and (max-width: 600px) {
+      flex-wrap: wrap;
     }
+  }
 }

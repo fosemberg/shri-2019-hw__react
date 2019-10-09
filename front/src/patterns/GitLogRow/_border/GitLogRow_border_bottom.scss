@@ -1,24 +1,22 @@
 .GitLogRow {
   &_border_bottom {
-      border-bottom: 1px solid var(--border-faded);
+    border-bottom: 1px solid var(--border-faded);
   }
 
   &:mod(padding both) {
-      padding: var(--space-s) 0;
+    padding: var(--space-s) 0;
   }
 
   &:mod(hide desktop) {
-      display: none;
-      @media screen and (max-width: $mobile-breakpoint) {
-        display: flex;
-      }
+    display: none;
+    @media screen and (max-width: $mobile-breakpoint) {
+      display: flex;
+    }
   }
 
-  
-
-    &:mod(display flex) {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  &:mod(display flex) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

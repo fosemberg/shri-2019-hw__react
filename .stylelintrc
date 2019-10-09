@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-airbnb",
+    "stylelint-prettier/recommended",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "number-leading-zero": "always",
+    "max-nesting-depth": 100,
+    "selector-max-id": 100,
+    "declaration-property-value-blacklist": null,
+    "declaration-block-single-line-max-declarations": null,
+    "scss/dollar-variable-pattern": ".*",
+    "scss/at-extend-no-missing-placeholder": null,
+
+    "order/order": null
+  }
+}

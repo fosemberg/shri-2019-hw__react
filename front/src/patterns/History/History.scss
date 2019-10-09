@@ -1,24 +1,16 @@
 .History {
-  margin-top: var(--space-l);
-  font-family: var(--font);
-  font-size: var(--font-m);
-  line-height: var(--line-m);
   position: relative;
+  margin-top: var(--space-l);
+  font-size: var(--font-m);
+  font-family: var(--font);
+  line-height: var(--line-m);
 
-  
-
-    &:before {
-      content: '';
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      left: 0;
-      background-image: url('history.svg');
-    }
-  }
-
-  
-
-    
+  &:before {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url("history.svg");
+    content: "";
   }
 }

@@ -1,14 +1,14 @@
 .BranchInfo {
   &-Action {
-        display: flex;
-        font-size: var(--font-xs);
-        line-height: var(--line-xs);
+    display: flex;
+    font-size: var(--font-xs);
+    line-height: var(--line-xs);
 
-        @media screen and (max-width: 600px) {
-            order: 1;
-            width: 100%;
-            justify-content: space-between;
-            margin-bottom: var(--space-s);
-        }
+    @media screen and (max-width: 600px) {
+      justify-content: space-between;
+      order: 1;
+      width: 100%;
+      margin-bottom: var(--space-s);
     }
+  }
 }

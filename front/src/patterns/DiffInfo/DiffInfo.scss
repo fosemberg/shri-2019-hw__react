@@ -1,15 +1,7 @@
 .DiffInfo {
-    display: flex;
-    font-family: var(--editor-font);
-    font-size: var(--font-xxs);
-    line-height: var(--line-m);
-    padding: 6px var(--space-s) 0;
-
-    
-
-    
-
-    
-
-    
+  display: flex;
+  padding: 6px var(--space-s) 0;
+  font-size: var(--font-xxs);
+  font-family: var(--editor-font);
+  line-height: var(--line-m);
 }

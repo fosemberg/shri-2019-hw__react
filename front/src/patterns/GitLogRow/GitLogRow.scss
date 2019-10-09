@@ -1,16 +1,13 @@
 $mobile-breakpoint: 600px;
 
 :block(git-log-row) {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   color: var(--primary);
-  font-family: var(--font);
   font-size: var(--font-s);
+  font-family: var(--font);
   line-height: var(--line-m);
-
-  
-  }
 
   &:elem(message) {
     margin-right: var(--space-xs);
