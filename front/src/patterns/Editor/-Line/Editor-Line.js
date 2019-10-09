@@ -4,8 +4,8 @@ import './Editor-Line.scss';
 
 export const cnEditorLine = cn('Editor-Line');
 
-const EditorLine = ({className, children}) => (
-  <td className={cnEditorLine({}, [className])}>{children}</td>
+const EditorLine = ({className, children, dangerouslySetInnerHTML}) => (
+  <td dangerouslySetInnerHTML={dangerouslySetInnerHTML} className={cnEditorLine({}, [className])}>{children}</td>
 );
 
 export default EditorLine;

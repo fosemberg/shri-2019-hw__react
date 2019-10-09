@@ -22,7 +22,7 @@ const DetailsContent = ({data}) => (
               {key}
             </EditorNumber>
             <EditorLine>
-              {stroke}
+              {stroke.replace(/ /g, "\u00a0")}
             </EditorLine>
           </EditorRow>
         )
