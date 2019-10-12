@@ -1,20 +1,4 @@
-enum FileType {
-  file = 'file',
-  dir = 'dir',
-}
-
-type Hash = string;
-type Url = string;
-
-interface IFile {
-  num: string;
-  fileType: FileType;
-  lastCommit: Hash;
-  name: string;
-  commitMessage: string;
-  committer: string;
-  updated: string;
-}
+import {FileType, IFile, Url} from "./types";
 
 const files: Array<IFile> = [
   {
