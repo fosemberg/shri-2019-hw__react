@@ -23,17 +23,22 @@ import {Page} from "../../utils/types";
 
 const BranchInfoView = compose(
   BranchInfoBorderBottom
-)(BranchInfoBase)
+)(BranchInfoBase);
 
 const SelectArrow = compose(
   SelectArrowPositionBaseline,
-)(SelectArrowBase)
+)(SelectArrowBase);
 
 const SelectName = compose(
   SelectNameColorSecondary
-)(SelectNameBase)
+)(SelectNameBase);
 
-const BranchInfo = ({repositoryName, page}) => (
+interface IBranchInfoProps {
+    repositoryName: string;
+    page: Page;
+}
+
+const BranchInfo = ({repositoryName, page}: IBranchInfoProps) => (
   <BranchInfoView border='bottom'>
     {
       page !== Page.repositories &&
@@ -48,8 +53,7 @@ const BranchInfo = ({repositoryName, page}) => (
             </SelectName>
             <SelectArrow position='baseline' className={cnArrow({'state': 'down', 'color': 'secondary'})}/>
           </BranchInfoSelect>
-          <BranchInfoSearch>
-          </BranchInfoSearch>
+          <BranchInfoSearch/>
         </BranchInfoHeader>
         <BranchInfoContent/>
       </>
