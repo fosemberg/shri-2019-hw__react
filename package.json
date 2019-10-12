@@ -2,7 +2,7 @@
   "name": "shri-2019-hw__react",
   "version": "1.0.0",
   "description": "Проект создан исключительно в обучающих целях. Основная задача: повторить функциональность внутреннего проекта yandex: Arcanum.",
-  "main": "index.js",
+  "main": "index.tsx",
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
