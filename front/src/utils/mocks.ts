@@ -1,7 +1,25 @@
-const files = [
+enum FileType {
+  file = 'file',
+  dir = 'dir',
+}
+
+type Hash = string;
+type Url = string;
+
+interface IFile {
+  num: string;
+  fileType: FileType;
+  lastCommit: Hash;
+  name: string;
+  commitMessage: string;
+  committer: string;
+  updated: string;
+}
+
+const files: Array<IFile> = [
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "79d57a",
     "name": ".gitignore",
     "commitMessage": "[vcs] move http to arc",
@@ -10,7 +28,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "2f3ca9",
     "name": "API.md",
     "commitMessage": "[vcs] move http to arc",
@@ -19,7 +37,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "ddfd03",
     "name": "README.md",
     "commitMessage": "[vcs] move http to arc",
@@ -28,7 +46,7 @@ const files = [
   },
   {
     "num": "040000",
-    "fileType": "dir",
+    "fileType": FileType.dir,
     "lastCommit": "0fb9f0",
     "name": "README",
     "commitMessage": "[vcs] move http to arc",
@@ -37,7 +55,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "3f287e",
     "name": "images.d.ts",
     "commitMessage": "[vcs] move http to arc",
@@ -46,7 +64,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "1c360e",
     "name": "package.json",
     "commitMessage": "[vcs] move http to arc",
@@ -55,7 +73,7 @@ const files = [
   },
   {
     "num": "040000",
-    "fileType": "dir",
+    "fileType": FileType.dir,
     "lastCommit": "461e8d",
     "name": "public",
     "commitMessage": "[vcs] move http to arc",
@@ -64,7 +82,7 @@ const files = [
   },
   {
     "num": "040000",
-    "fileType": "dir",
+    "fileType": FileType.dir,
     "lastCommit": "e34870",
     "name": "src",
     "commitMessage": "[vcs] move http to arc",
@@ -73,7 +91,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "7d74db",
     "name": "tsconfig.json",
     "commitMessage": "[vcs] move http to arc",
@@ -82,7 +100,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "414421",
     "name": "tsconfig.prod.json",
     "commitMessage": "[vcs] move http to arc",
@@ -91,7 +109,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "65ffdd",
     "name": "tsconfig.test.json",
     "commitMessage": "[vcs] move http to arc",
@@ -100,7 +118,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "206b22",
     "name": "tslint.json",
     "commitMessage": "[vcs] move http to arc",
@@ -109,7 +127,7 @@ const files = [
   },
   {
     "num": "100644",
-    "fileType": "file",
+    "fileType": FileType.file,
     "lastCommit": "74373a",
     "name": "yarn.lock",
     "commitMessage": "[vcs] move http to arc",
@@ -132,16 +150,13 @@ HASH_PREFIX = 10
 HOME_DIR = os.path.expanduser('~')
 `;
 
-export const getDataTest = (url) => {
+export const getDataTest = (url: Url) => {
   return new Promise((resolve, reject) => {
-
-    const data = ~url
-      .slice(0, -1)
-      .split('/')
-      .pop()
-      .indexOf('.')
-      ? file
-      : files;
+    const filesInUrl: string[] = url
+        .slice(0, -1)
+        .split('/');
+    const fileInUrl = filesInUrl.length !== 0 && filesInUrl.pop();
+    const data = fileInUrl && fileInUrl.indexOf('.') ? files : file;
     setTimeout(() => resolve(data), 1000)
   })
-}
+};
