@@ -4,10 +4,11 @@ import './Footer.scss';
 import FooterItem from "./-Item/Footer-Item";
 import FooterVersion from "./-Version/Footer-Version";
 import Link from "../Link/Link";
+import {IClassNameProps} from "@bem-react/core";
 
 export const cnFooter = cn('Footer');
 
-const Footer = ({className, children}) => (
+const Footer: React.FC<IClassNameProps> = ({className, children}) => (
   <div className={cnFooter({}, [className])}>
     <FooterItem>
       Trade secrets of Yandex LLC. 16, Lev Tolstoy Str.,Moscow, Russia, 119021
