@@ -2,7 +2,7 @@ import { IClassNameProps } from '@bem-react/core';
 import {cn} from "@bem-react/classname";
 
 export interface ILayoutContainer extends IClassNameProps {
-  grow?: 'true';
+  grow?: true;
   align?: 'center';
   size?: 's' | 'm';
   spaceV?: 'xxxxl' | 'xxxxxl';

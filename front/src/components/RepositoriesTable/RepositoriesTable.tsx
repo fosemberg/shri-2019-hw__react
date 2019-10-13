@@ -3,19 +3,22 @@ import TableHead from "../TableHead/TableHead";
 import RepositoriesTableContent from "./-Content/RepositoriesTableContent";
 import Table from "../../patterns/Table/Table";
 
-const headerNames = [
-  'name',
-  '',
-  '',
-  '',
-  ''
-]
+interface IRepositoriesTable {
+  data: string[];
+}
 
-const RepositoriesTable = ({data}) => (
+const emptyCells = 4;
+
+const headerNames: string[] = [
+  'name',
+  ...new Array(emptyCells).fill('')
+];
+
+const RepositoriesTable: React.FC<IRepositoriesTable> = ({data}) => (
   <Table>
     <TableHead names={headerNames}/>
     <tbody>
-    <RepositoriesTableContent data={data}/>
+    <RepositoriesTableContent data={data} emptyCells={emptyCells}/>
     </tbody>
   </Table>
 );

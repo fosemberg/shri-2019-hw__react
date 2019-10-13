@@ -12,6 +12,12 @@ import EditorHeaderItem from "../../../patterns/Editor/-HeaderItem/Editor-Header
 import File from "../../../patterns/File/File";
 import EditorByteCount from "../../../patterns/Editor/-ByteCount/Editor-ByteCount";
 import EditorAction from "../../../patterns/Editor/-Action/Editor-Action";
+import {FileType} from "../../../utils/types";
+
+interface IDetailsHeader {
+  fileName: string;
+  fileType: FileType;
+}
 
 const EditorHeader = compose(
   EditorHeaderColorDefault,
@@ -23,9 +29,9 @@ const FileIcon = compose(
   FileIconTypeCode,
   FileIconTypeFile,
   FileIconTypeReadme,
-)(FileIconBase)
+)(FileIconBase);
 
-const DetailsHeader = ({fileName, fileType = 'code'}) => (
+const DetailsHeader: React.FC<IDetailsHeader> = ({fileName, fileType = 'code'}) => (
   <EditorHeader
       color={'default'}
       spaceH={'m'}

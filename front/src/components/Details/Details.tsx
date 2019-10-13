@@ -11,9 +11,9 @@ import DetailsHeader from "./-Header/DetailsHeader";
 import {FileType} from "../../utils/types";
 
 interface IDetails {
-    data: string | undefined;
+    data: string;
     fileName: string;
-    fileType: FileType;
+    fileType?: FileType;
 }
 
 const Section = compose(

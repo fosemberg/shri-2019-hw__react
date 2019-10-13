@@ -18,6 +18,11 @@ import {compose} from "@bem-react/core";
 import {FileIconTypeFile} from "../../../patterns/File/-Icon/_type/File-Icon_type_file";
 import {FileIconTypeDir} from "../../../patterns/File/-Icon/_type/File-Icon_type_dir";
 import {FileIconTypeReadme} from "../../../patterns/File/-Icon/_type/File-Icon_type_readme";
+import {IFile} from "../../../utils/types";
+
+interface IFilesContent {
+  data: IFile[];
+}
 
 const FileIcon = compose(
   FileIconTypeFile,
@@ -25,7 +30,7 @@ const FileIcon = compose(
   FileIconTypeReadme,
 )(FileIconBase);
 
-const FilesContent = ({data}) => {
+const FilesContent: React.FC<IFilesContent> = ({data}) => {
   const pathname = usePathname();
   return <>
     {

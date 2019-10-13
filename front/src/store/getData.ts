@@ -1,7 +1,7 @@
 import {generateGetFileUrl, urlToArray} from "../utils/helpers";
-import {FileType, Url} from "../utils/types";
+import {FileType, IFile, Url} from "../utils/types";
 
-const getData = (url: Url): Promise<Object> => {
+const getData = (url: Url): Promise<string | string[] | IFile[]> => {
   const urlArr: Array<string> = urlToArray(url);
   const target:string | undefined = urlArr.pop();
   const fileType = target && ~target.indexOf('.') ? FileType.file : FileType.dir;

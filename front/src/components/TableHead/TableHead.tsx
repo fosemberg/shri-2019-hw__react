@@ -3,7 +3,11 @@ import TableRow from "../../patterns/Table/-Row/Table-Row";
 import TableCell from "../../patterns/Table/-Cell/Table-Cell";
 import TableHeadBase from "../../patterns/Table/-Head/Table-Head";
 
-const TableHead = ({names = ['']}) =>
+interface ITableHead {
+  names?: string[];
+}
+
+const TableHead:React.FC<ITableHead> = ({names = ['']}) =>
   <TableHeadBase>
     <TableRow>
       {names.map((headerName, key) =>

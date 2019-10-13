@@ -17,19 +17,23 @@ import {cnLink} from "../../patterns/Link";
 import "../../patterns/Link/Link.scss";
 import {HeaderSelectColorDefault} from "../../patterns/Header/-Select/_color/Header-Select_color_default";
 
+interface IHeader {
+    repositoryName: string;
+}
+
 const SelectName = compose(
   SelectNameWeightBold,
 )(SelectNameBase);
 
 const SelectArrow = compose(
   SelectArrowPositionCenter,
-)(SelectArrowBase)
+)(SelectArrowBase);
 
 const HeaderSelect = compose(
   HeaderSelectColorDefault
-)(HeaderSelectBase)
+)(HeaderSelectBase);
 
-const Header = ({repositoryName}) => (
+const Header: React.FC<IHeader> = ({repositoryName}) => (
     <HeaderBase>
       <Link to={'/'} className={cnLink()}>
       <HeaderLogo/>

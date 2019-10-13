@@ -16,8 +16,12 @@ import Files from "../../components/Files/Files";
 import Details from "../../components/Details/Details";
 import {urlToArray, usePathname} from "../../utils/helpers";
 import RepositoriesTable from "../../components/RepositoriesTable/RepositoriesTable";
-import {Page} from "../../utils/types";
+import {IFile, Page} from "../../utils/types";
 import Loader from "../../components/Loader/Loader";
+
+interface IMainPage {
+  getData: (pathname: string) => Promise<string | string[] | IFile[]>;
+}
 
 const Theme = compose(
   ThemeSpaceDefault,
@@ -28,9 +32,9 @@ const Theme = compose(
 
 const LayoutContainer = compose(
   LayoutContainerGrow
-)(LayoutContainerBase)
+)(LayoutContainerBase);
 
-const MainPage = ({getData}) => {
+const MainPage: React.FC<IMainPage> = ({getData}) => {
   const [page, setPage] = useState(Page.loader);
   const [data, setData] = useState({});
   const [fileName, setFileName] = useState('');
@@ -46,7 +50,8 @@ const MainPage = ({getData}) => {
         setData(json);
         const _page = pathname === '/' ? Page.repositories :
             Array.isArray(json) ? Page.files : Page.details
-        _page === Page.details && setFileName(urlArr.pop());
+        const fileName = urlArr.pop() || '';
+        _page === Page.details && setFileName(fileName);
         setPage(_page)
       }
     )
@@ -62,13 +67,13 @@ const MainPage = ({getData}) => {
     <Layout>
       <Header repositoryName={repositoryName}/>
       <LayoutContainer grow>
-        {page !== Page.repositories && <BreadCrumbs repositoryNaeme={repositoryName}/>}
+        {page !== Page.repositories && <BreadCrumbs/>}
         <BranchInfo repositoryName={repositoryName} page={page}/>
         {
           page === Page.loader ? <Loader/> :
-          page === Page.files ? <Files data={data}/> :
-          page === Page.details ? <Details data={data} fileName={fileName}/> :
-          page === Page.repositories ? <RepositoriesTable data={data}/> :
+          page === Page.files ? <Files data={data as IFile[]}/> :
+          page === Page.details ? <Details data={data as string} fileName={fileName}/> :
+          page === Page.repositories ? <RepositoriesTable data={data as string[]}/> :
           ''
         }
       </LayoutContainer>

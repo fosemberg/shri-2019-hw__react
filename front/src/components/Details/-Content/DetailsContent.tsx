@@ -7,7 +7,7 @@ import {EditorBodyColorMain} from "../../../patterns/Editor/-Body/_color/Editor-
 import EditorBodyBase from "../../../patterns/Editor/-Body/Editor-Body";
 
 interface IDetailsContent {
-  data: string | undefined;
+  data: string;
 }
 
 const EditorBody = compose(

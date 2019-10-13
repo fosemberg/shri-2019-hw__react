@@ -5,11 +5,15 @@ import TabsItemBase from "../../patterns/Tabs/-Item/Tabs-Item";
 import TabsView from "../../patterns/Tabs/Tabs";
 import {Page} from "../../utils/types";
 
+interface ITabs {
+  page: Page
+}
+
 const TabsItem = compose(
   TabsItemStateActive
-)(TabsItemBase)
+)(TabsItemBase);
 
-const Tabs = ({page}) => (
+const Tabs:React.FC<ITabs> = ({page}) => (
   <TabsView>
     <TabsItem state='active'>
       {

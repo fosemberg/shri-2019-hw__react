@@ -11,7 +11,12 @@ import "../../../patterns/File/_type/File_type_dir.scss";
 import "../../../patterns/File/_type/File_type_file.scss";
 import {usePathname} from "../../../utils/helpers";
 
-const RepositoriesTableContent = ({data}) => {
+interface IRepositoriesTableContent {
+  data: string[];
+  emptyCells: number
+}
+
+const RepositoriesTableContent: React.FC<IRepositoriesTableContent> = ({data, emptyCells}) => {
   const pathname = usePathname();
   return <>
     {
@@ -23,7 +28,7 @@ const RepositoriesTableContent = ({data}) => {
                 {name}
               </RouterLink>
             </TableCell>
-            <TableCell colSpan={4}/>
+            <TableCell colSpan={emptyCells}/>
           </TableRow>
       )
     }
