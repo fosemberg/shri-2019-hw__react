@@ -1,7 +1,7 @@
 const {exec} = require('child_process');
 const {RESPONSE} = require('./config');
 
-const execCommand = (
+export const execCommand = (
     command,
     callbackOut = x => x,
     callbackErr = callbackOut,
@@ -13,10 +13,10 @@ const execCommand = (
             : callbackOut(out)
     );
 
-const execCommandWithRes = (
-    command,
+export const execCommandWithRes = (
+    command: string,
     res,
-    callbackOut = x => x,
+    callbackOut = (x: Object) => x,
     callbackErr = RESPONSE.NO_ROUT(res),
     options = {},
 ) =>
@@ -27,23 +27,16 @@ const execCommandWithRes = (
         options,
     );
 
-const arrayFromOut = out =>
+export const arrayFromOut = (out: string | Object) =>
     typeof out === 'string'
         ? out
             .split('\n')
             .slice(0, -1)
         : out;
 
-const getPage = (
-    array,
-    pageSize = array.length,
+export const getPage = (
+    array: string[],
+    pageSize: number = array.length,
     pageNumber = 1
 ) =>
     array.splice((pageNumber - 1) * pageSize, pageSize);
-
-module.exports = {
-    execCommand,
-    execCommandWithRes,
-    arrayFromOut,
-    getPage,
-};

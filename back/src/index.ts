@@ -1,11 +1,6 @@
-const app = require('./expressApp');
+import {app} from "./expressApp";
+import {arrayFromOut, execCommandWithRes, getPage} from "./utils";
 
-
-const {
-  execCommandWithRes,
-  arrayFromOut,
-  getPage,
-} = require('./utils');
 const {
   PATH_TO_REPOS,
   PATH_TO_BACKUP,
