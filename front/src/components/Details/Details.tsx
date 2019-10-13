@@ -8,17 +8,24 @@ import "../../patterns/Editor/Editor.scss";
 import "../../patterns/Editor/_border/Editor_border_faded.scss";
 import DetailsContent from "./-Content/DetailsContent";
 import DetailsHeader from "./-Header/DetailsHeader";
+import {FileType} from "../../utils/types";
+
+interface IDetails {
+    data: string | undefined;
+    fileName: string;
+    fileType: FileType;
+}
 
 const Section = compose(
   SectionIndentTM,
   SectionIndentBM,
 )(SectionBase);
 
-const Details = (
+const Details: React.FC<IDetails> = (
   {
     data,
     fileName = 'fileName',
-    fileType = fileName.toUpperCase().includes('README') || fileName.slice(-3) ==='.md' ? 'readme' : 'code',
+    fileType = fileName.toUpperCase().includes('README') || fileName.slice(-3) ==='.md' ? FileType.readme : FileType.code,
   }
 ) => (
   <Section

@@ -6,11 +6,15 @@ import {compose} from "@bem-react/core";
 import {EditorBodyColorMain} from "../../../patterns/Editor/-Body/_color/Editor-Body_color_main";
 import EditorBodyBase from "../../../patterns/Editor/-Body/Editor-Body";
 
+interface IDetailsContent {
+  data: string | undefined;
+}
+
 const EditorBody = compose(
   EditorBodyColorMain
 )(EditorBodyBase);
 
-const DetailsContent = ({data}) => (
+const DetailsContent: React.FC<IDetailsContent> = ({data}) => (
   <EditorBody color={'main'}>
     {
       typeof data === 'string'
@@ -26,9 +30,9 @@ const DetailsContent = ({data}) => (
             </EditorLine>
           </EditorRow>
         )
-        : <EditorRow></EditorRow>
+        : <EditorRow/>
     }
   </EditorBody>
-)
+);
 
 export default DetailsContent;

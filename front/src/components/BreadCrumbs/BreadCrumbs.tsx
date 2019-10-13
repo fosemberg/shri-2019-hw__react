@@ -5,12 +5,13 @@ import BreadCrumbsBase from "../../patterns/BreadCrumbs/BreadCrumbs";
 import {compose} from "@bem-react/core";
 import {BreadCrumbsBorderB} from "../../patterns/BreadCrumbs/_border-b/BreadCrumbs_border-b";
 import BreadCrumbsItem from "./-Item/BreadCrumbs-Item";
+import { IClassNameProps } from '@bem-react/core';
 
 const BreadCrumbsView = compose(
     BreadCrumbsBorderB
 )(BreadCrumbsBase);
 
-const BreadCrumbs = ({className}) =>
+const BreadCrumbs: React.FC<IClassNameProps> = ({className}) =>
     <Route
         path='*'
         render={({location: {pathname}}) =>

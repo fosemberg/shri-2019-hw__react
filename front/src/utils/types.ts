@@ -8,6 +8,8 @@ export enum Page {
 export enum FileType {
   dir = 'dir',
   file = 'file',
+  readme = 'readme',
+  code = 'code',
 }
 
 export type Hash = string;
