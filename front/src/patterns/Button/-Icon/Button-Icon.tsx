@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnButtonIcon, IButtonIcon} from "./index";
 import './Button-Icon.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnButtonIcon = cn('Button-Icon');
-
-const ButtonIcon: React.FC<IClassNameProps> = ({className, children}) => (
+const ButtonIcon: React.FC<IButtonIcon> = ({className, children}) => (
   <div className={cnButtonIcon({}, [className])}>{children}</div>
 );
 

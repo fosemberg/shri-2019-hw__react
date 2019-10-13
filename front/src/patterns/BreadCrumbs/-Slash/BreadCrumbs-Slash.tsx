@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnBreadCrumbsSlash, IBreadCrumbsSlash} from "./index";
 import './BreadCrumbs-Slash.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnBreadCrumbsSlash = cn('BreadCrumbs-Slash');
-
-const BreadCrumbsSlash: React.FC<IClassNameProps> = ({className, children}) => (
+const BreadCrumbsSlash: React.FC<IBreadCrumbsSlash> = ({className, children}) => (
   <div className={cnBreadCrumbsSlash({}, [className])}>{children}</div>
 );
 

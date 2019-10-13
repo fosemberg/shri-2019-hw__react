@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnUser, IUser} from "./index";
 import './User.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnUser = cn('User');
-
-const User: React.FC<IClassNameProps> = ({className, children}) => (
+const User: React.FC<IUser> = ({className, children}) => (
   <div className={cnUser({}, [className])}>{children}</div>
 );
 

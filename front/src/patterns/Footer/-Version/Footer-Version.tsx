@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnFooterVersion, IFooterVersion} from "./index";
 import './Footer-Version.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnFooterVersion = cn('Footer-Version');
-
-const FooterVersion: React.FC<IClassNameProps> = ({className, children}) => (
+const FooterVersion: React.FC<IFooterVersion> = ({className, children}) => (
   <div className={cnFooterVersion({}, [className])}>{children}</div>
 );
 

@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnTable, ITable} from "./index";
 import './Table.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnTable = cn('Table');
-
-const Table: React.FC<IClassNameProps> = ({className, children}) => (
+const Table: React.FC<ITable> = ({className, children}) => (
   <table className={cnTable({}, [className])}>{children}</table>
 );
 

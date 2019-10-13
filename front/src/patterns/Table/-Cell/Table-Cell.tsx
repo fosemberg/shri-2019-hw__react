@@ -1,10 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnTableCell, ITableCell} from "./index";
 import './Table-Cell.scss';
 
-export const cnTableCell = cn('Table-Cell');
-
-const TableCell = ({className, children, colSpan}) => (
+const TableCell: React.FC<ITableCell> = ({className, children, colSpan = 1}) => (
   <td colSpan={colSpan} className={cnTableCell({}, [className])}>{children}</td>
 );
 

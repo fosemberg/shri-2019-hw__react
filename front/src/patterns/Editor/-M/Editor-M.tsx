@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnEditorM, IEditorM} from "./index";
 import './Editor-M.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnEditorM = cn('Editor-M');
-
-const EditorM: React.FC<IClassNameProps> = ({className, children}) => (
+const EditorM: React.FC<IEditorM> = ({className, children}) => (
   <div className={cnEditorM({}, [className])}>{children}</div>
 );
 

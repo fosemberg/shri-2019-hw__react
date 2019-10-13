@@ -1,12 +1,9 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnEditorByteCount, IEditorByteCount} from "./index";
 import './Editor-ByteCount.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnEditorByteCount = cn('Editor-ByteCount');
-
-const EditorByteCount: React.FC<IClassNameProps> = ({className, children}) => (
-  <span className={cnEditorByteCount({}, [className])}>{children}</span>
+const EditorByteCount: React.FC<IEditorByteCount> = ({className, children}) => (
+  <div className={cnEditorByteCount({}, [className])}>{children}</div>
 );
 
 export default EditorByteCount;

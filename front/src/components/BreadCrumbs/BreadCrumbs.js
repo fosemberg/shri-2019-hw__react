@@ -1,10 +1,10 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import '../../patterns/BreadCrumbs/BreadCrumbs.scss';
-import BreadCrumbsItem from "../../patterns/BreadCrumbs/-Item/BreadCrumbs-Item";
 import BreadCrumbsBase from "../../patterns/BreadCrumbs/BreadCrumbs";
 import {compose} from "@bem-react/core";
 import {BreadCrumbsBorderB} from "../../patterns/BreadCrumbs/_border-b/BreadCrumbs_border-b";
+import BreadCrumbsItem from "./-Item/BreadCrumbs-Item";
 
 const BreadCrumbsView = compose(
     BreadCrumbsBorderB

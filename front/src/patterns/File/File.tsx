@@ -1,12 +1,9 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnFile, IFile} from "./index";
 import './File.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnFile = cn('File');
-
-const File: React.FC<IClassNameProps> = ({className, children}) => (
-  <span className={cnFile({}, [className])}>{children}</span>
+const File: React.FC<IFile> = ({className, children}) => (
+  <div className={cnFile({}, [className])}>{children}</div>
 );
 
 export default File;

@@ -1,4 +1,5 @@
 import { withBemMod } from '@bem-react/core';
-import './File_type.scss';
+import {IFile} from "../index";
+import './File_type_dir.scss';
 
-export const FileType = withBemMod('File', { type: 'undefined'})
+export const FileTypeDir = withBemMod<IFile>('File', { type: 'dir'});

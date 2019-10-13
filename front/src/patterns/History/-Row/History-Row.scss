@@ -1,0 +1,22 @@
+.History {
+  &-Row {
+    box-sizing: border-box;
+    margin: 0 0 0 19px;
+    padding: 0 0 var(--space-m) 31px;
+    border-left: 2px solid var(--ghost);
+
+    &:last-of-type {
+      padding-bottom: 0;
+      border-left: none;
+    }
+
+    &:before {
+      position: absolute;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      background-image: url('history.svg');
+      content: '';
+    }
+  }
+}

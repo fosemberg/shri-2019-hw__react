@@ -1,10 +1,8 @@
 import React from 'react';
+import {cnBranchInfo, IBranchInfo} from "./index";
 import './BranchInfo.scss';
-import {IClassNameProps} from "@bem-react/core";
-import {cnBranchInfo} from "./index";
 
-
-const BranchInfo: React.FC<IClassNameProps> = ({className, children}) => (
+const BranchInfo: React.FC<IBranchInfo> = ({className, children}) => (
   <div className={cnBranchInfo({}, [className])}>{children}</div>
 );
 

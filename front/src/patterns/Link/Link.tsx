@@ -1,10 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnLink, ILink} from "./index";
 import './Link.scss';
 
-export const cnLink = cn('Link');
-
-const Link = ({className, children, href = '#'}) => (
+const Link: React.FC<ILink> = ({className, children, href = '#'}) => (
   <a href={href} className={cnLink({}, [className])}>{children}</a>
 );
 

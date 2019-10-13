@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnBranchInfoSearch, IBranchInfoSearch} from "./index";
 import './BranchInfo-Search.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnBranchInfoSearch = cn('BranchInfo-Search');
-
-const BranchInfoSearch: React.FC<IClassNameProps> = ({className, children}) => (
+const BranchInfoSearch: React.FC<IBranchInfoSearch> = ({className, children}) => (
   <div className={cnBranchInfoSearch({}, [className])}>{children}</div>
 );
 

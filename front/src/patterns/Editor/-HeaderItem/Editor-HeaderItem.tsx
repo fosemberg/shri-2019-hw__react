@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnEditorHeaderItem, IEditorHeaderItem} from "./index";
 import './Editor-HeaderItem.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnEditorHeaderItem = cn('Editor-HeaderItem');
-
-const EditorHeaderItem: React.FC<IClassNameProps> = ({className, children}) => (
+const EditorHeaderItem: React.FC<IEditorHeaderItem> = ({className, children}) => (
   <div className={cnEditorHeaderItem({}, [className])}>{children}</div>
 );
 

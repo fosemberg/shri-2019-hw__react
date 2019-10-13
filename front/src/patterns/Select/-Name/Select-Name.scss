@@ -1,5 +1,7 @@
 .Select {
-  &-Name:first-child {
-    margin-right: var(--space-xxxs);
+  &-Name {
+    &:first-child {
+      margin-right: var(--space-xxxs);
+    }
   }
 }

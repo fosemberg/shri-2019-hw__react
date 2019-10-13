@@ -4,9 +4,9 @@ import TableCell from "../../../patterns/Table/-Cell/Table-Cell";
 import {Link as RouterLink}
 from "react-router-dom";
 import LinkBase from "../../../patterns/Link/Link";
-import {cnLink} from "../../../patterns/Link/Link";
+import {cnLink} from "../../../patterns/Link";
 import "../../../patterns/Link/Link.scss";
-import {cnFile} from "../../../patterns/File/File";
+import {cnFile} from "../../../patterns/File";
 import "../../../patterns/File/File.scss";
 import "../../../patterns/File/_type/File_type_branch.scss";
 import "../../../patterns/File/_type/File_type_dir.scss";

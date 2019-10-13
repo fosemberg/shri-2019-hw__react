@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnDiffInfoDiff, IDiffInfoDiff} from "./index";
 import './DiffInfo-Diff.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnDiffInfoDiff = cn('DiffInfo-Diff');
-
-const DiffInfoDiff: React.FC<IClassNameProps> = ({className, children}) => (
+const DiffInfoDiff: React.FC<IDiffInfoDiff> = ({className, children}) => (
   <div className={cnDiffInfoDiff({}, [className])}>{children}</div>
 );
 

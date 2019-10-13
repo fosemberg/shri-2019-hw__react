@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnArrow, IArrow} from "./index";
 import './Arrow.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnArrow = cn('Arrow');
-
-const Arrow: React.FC<IClassNameProps> = ({className, children}) => (
+const Arrow: React.FC<IArrow> = ({className, children}) => (
   <div className={cnArrow({}, [className])}>{children}</div>
 );
 

@@ -9,7 +9,7 @@
   font-family: var(--font);
   line-height: var(--line-s);
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 600px) {
     display: none;
     padding: var(--space-m) var(--space-m) 18px;
   }

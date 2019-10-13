@@ -1,6 +1,5 @@
-$mobile-breakpoint: 600px;
-
-:block(git-log-row) {
+.GitLogRow {
+  $mobile-breakpoint: 600px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,18 +7,4 @@ $mobile-breakpoint: 600px;
   font-size: var(--font-s);
   font-family: var(--font);
   line-height: var(--line-m);
-
-  &:elem(message) {
-    margin-right: var(--space-xs);
-  }
-
-  &:elem(arrow) {
-    position: absolute;
-    top: 45%;
-    right: 0;
-  }
-
-  &:elem(title) {
-    font-weight: bold;
-  }
 }

@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnFooterItem, IFooterItem} from "./index";
 import './Footer-Item.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnFooterItem = cn('Footer-Item');
-
-const FooterItem: React.FC<IClassNameProps> = ({className, children}) => (
+const FooterItem: React.FC<IFooterItem> = ({className, children}) => (
   <div className={cnFooterItem({}, [className])}>{children}</div>
 );
 

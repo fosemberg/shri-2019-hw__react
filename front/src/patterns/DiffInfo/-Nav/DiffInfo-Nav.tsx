@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnDiffInfoNav, IDiffInfoNav} from "./index";
 import './DiffInfo-Nav.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnDiffInfoNav = cn('DiffInfo-Nav');
-
-const DiffInfoNav: React.FC<IClassNameProps> = ({className, children}) => (
+const DiffInfoNav: React.FC<IDiffInfoNav> = ({className, children}) => (
   <div className={cnDiffInfoNav({}, [className])}>{children}</div>
 );
 

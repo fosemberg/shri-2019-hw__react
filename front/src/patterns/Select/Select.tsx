@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnSelect, ISelect} from "./index";
 import './Select.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnSelect = cn('Select');
-
-const Select: React.FC<IClassNameProps> = ({className, children}) => (
+const Select: React.FC<ISelect> = ({className, children}) => (
   <div className={cnSelect({}, [className])}>{children}</div>
 );
 

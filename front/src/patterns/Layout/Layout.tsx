@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnLayout, ILayout} from "./index";
 import './Layout.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnLayout = cn('Layout');
-
-const Layout: React.FC<IClassNameProps> = ({className, children}) => (
+const Layout: React.FC<ILayout> = ({className, children}) => (
   <div className={cnLayout({}, [className])}>{children}</div>
 );
 

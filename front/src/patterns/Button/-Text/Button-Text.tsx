@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnButtonText, IButtonText} from "./index";
 import './Button-Text.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnButtonText = cn('Button-Text');
-
-const ButtonText: React.FC<IClassNameProps> = ({className, children}) => (
+const ButtonText: React.FC<IButtonText> = ({className, children}) => (
   <div className={cnButtonText({}, [className])}>{children}</div>
 );
 

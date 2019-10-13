@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnHeaderSelect, IHeaderSelect} from "./index";
 import './Header-Select.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnHeaderSelect = cn('Header-Select');
-
-const HeaderSelect: React.FC<IClassNameProps> = ({className, children}) => (
+const HeaderSelect: React.FC<IHeaderSelect> = ({className, children}) => (
   <div className={cnHeaderSelect({}, [className])}>{children}</div>
 );
 

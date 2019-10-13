@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnHeaderLogo, IHeaderLogo} from "./index";
 import './Header-Logo.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnHeaderLogo = cn('Header-Logo');
-
-const HeaderLogo: React.FC<IClassNameProps> = ({className, children}) => (
+const HeaderLogo: React.FC<IHeaderLogo> = ({className, children}) => (
   <div className={cnHeaderLogo({}, [className])}>{children}</div>
 );
 

@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnSection, ISection} from "./index";
 import './Section.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnSection = cn('Section');
-
-const Section: React.FC<IClassNameProps> = ({className, children}) => (
+const Section: React.FC<ISection> = ({className, children}) => (
   <div className={cnSection({}, [className])}>{children}</div>
 );
 

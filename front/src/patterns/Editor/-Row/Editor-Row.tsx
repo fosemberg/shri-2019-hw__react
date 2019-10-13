@@ -1,11 +1,8 @@
 import React from 'react';
-import {cn} from "@bem-react/classname";
+import {cnEditorRow, IEditorRow} from "./index";
 import './Editor-Row.scss';
-import {IClassNameProps} from "@bem-react/core";
 
-export const cnEditorRow = cn('Editor-Row');
-
-const EditorRow: React.FC<IClassNameProps> = ({className, children}) => (
+const EditorRow: React.FC<IEditorRow> = ({className, children}) => (
   <tr className={cnEditorRow({}, [className])}>{children}</tr>
 );
 
