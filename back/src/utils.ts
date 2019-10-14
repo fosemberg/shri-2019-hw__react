@@ -1,13 +1,16 @@
+import {Response} from "express";
+import {IFile} from "./types";
+
 const {exec} = require('child_process');
 const {RESPONSE} = require('./config');
 
 export const execCommand = (
-    command,
-    callbackOut = x => x,
+    command: string,
+    callbackOut = (x: any) => x,
     callbackErr = callbackOut,
     options = {},
 ) =>
-    exec(command, options, (err, out) =>
+    exec(command, options, (err: Error, out: string) =>
         err
             ? callbackErr(err) && console.log(err)
             : callbackOut(out)
@@ -15,8 +18,8 @@ export const execCommand = (
 
 export const execCommandWithRes = (
     command: string,
-    res,
-    callbackOut = (x: Object) => x,
+    res: Response,
+    callbackOut: (x: string) => string | string[] | IFile[] = (x: string) => x,
     callbackErr = RESPONSE.NO_ROUT(res),
     options = {},
 ) =>
@@ -27,16 +30,14 @@ export const execCommandWithRes = (
         options,
     );
 
-export const arrayFromOut = (out: string | Object) =>
-    typeof out === 'string'
-        ? out
+export const arrayFromOut = (out: string): string[] =>
+        out
             .split('\n')
-            .slice(0, -1)
-        : out;
+            .slice(0, -1);
 
 export const getPage = (
     array: string[],
     pageSize: number = array.length,
-    pageNumber = 1
+    pageNumber: number = 1
 ) =>
     array.splice((pageNumber - 1) * pageSize, pageSize);

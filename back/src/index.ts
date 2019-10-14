@@ -1,5 +1,17 @@
 import {app} from "./expressApp";
 import {arrayFromOut, execCommandWithRes, getPage} from "./utils";
+import {Request, Response} from "express";
+import {
+  IBody,
+  IParams,
+  IQuery,
+  IWithCommitHash,
+  IWithPageNumber,
+  IWithPageSize,
+  IWithPath,
+  IWithRepositoryId,
+  IWithUrl
+} from "./types";
 
 const {
   PATH_TO_REPOS,
@@ -10,9 +22,11 @@ const {
 } = require('./config');
 const {createMessageObjectString} = require('./configUtils');
 
+
+
 // Возвращает массив репозиториев, которые имеются в папке.
 app.get('/api/repos',
-  (req, res) =>
+  (req: Request, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS} &&
             ls`,
@@ -24,19 +38,20 @@ app.get('/api/repos',
 // Возвращает массив коммитов в данной ветке (или хэше коммита) вместе с датами их создания.
 // с пагинацией для списка коммитов
 app.get('/api/repos/:repositoryId/commits/:commitHash',
-  ({params: {repositoryId, commitHash}, query: {pageSize, pageNumber}}, res) =>
+  ({params: {repositoryId, commitHash}, query: {pageSize, pageNumber}}:
+     IParams<IWithRepositoryId & IWithCommitHash> & IQuery<IWithPageSize & IWithPageNumber>, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS}/${repositoryId} &&
             git checkout -q ${commitHash} &&
             git log --format="${GIT_LOG_FORMAT}"`,
       res,
-      out => getPage(arrayFromOut(out), pageSize, pageNumber)
+      out => getPage(arrayFromOut(out), +pageSize, +pageNumber)
     )
 );
 
 // Возвращает diff коммита в виде строки.
 app.get('/api/repos/:repositoryId/commits/:commitHash/diff',
-  ({params: {repositoryId, commitHash}}, res) =>
+  ({params: {repositoryId, commitHash}}: IParams<IWithRepositoryId & IWithCommitHash>, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS}/${repositoryId} &&
             git diff ${commitHash}`,
@@ -56,7 +71,7 @@ app.get('/api/repos/:repositoryId/commits/:commitHash/diff',
 //    ({params: {repositoryId, commitHash, 0: path}}, res) =>
 
 app.get('/api/repos/:repositoryId/tree/:commitHash',
-  ({params: {repositoryId, commitHash}}, res) =>
+  ({params: {repositoryId, commitHash}}: IParams<IWithRepositoryId & IWithCommitHash>, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS}/${repositoryId} &&
             git checkout ${commitHash} -q &&
@@ -67,7 +82,7 @@ app.get('/api/repos/:repositoryId/tree/:commitHash',
 );
 
 app.get('/api/repos/:repositoryId/tree/:commitHash/*',
-  ({params: {repositoryId, commitHash, 0: path}}, res) =>
+  ({params: {repositoryId, commitHash, 0: path}}: IParams<IWithRepositoryId & IWithCommitHash & IWithPath>, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS}/${repositoryId} &&
             git checkout -q ${commitHash} &&
@@ -82,7 +97,7 @@ app.get('/api/repos/:repositoryId/tree/:commitHash/*',
 //     Примеры:
 // /api/repos/cool-timer/blob/cool-branch/src/components/Header/index.tsx
 app.get('/api/repos/:repositoryId/blob/master/*',
-  ({params: {repositoryId, 0: path}}, res) =>
+  ({params: {repositoryId, 0: path}}: IParams<IWithRepositoryId & IWithPath>, res: Response) =>
   {
     console.log(`cd ${PATH_TO_REPOS}/${repositoryId} &&
             cat ${path}`);
@@ -99,7 +114,7 @@ app.get('/api/repos/:repositoryId/blob/master/*',
 //     Примеры:
 // /api/repos/cool-timer/blob/cool-branch/src/components/Header/index.tsx
 app.get('/api/repos/:repositoryId/blob/:commitHash/*',
-  ({params: {repositoryId, commitHash, 0: path}}, res) =>
+  ({params: {repositoryId, commitHash, 0: path}}: IParams<IWithRepositoryId & IWithCommitHash & IWithPath>, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS}/${repositoryId} &&
             git checkout -q ${commitHash} &&
@@ -109,14 +124,14 @@ app.get('/api/repos/:repositoryId/blob/:commitHash/*',
 );
 
 app.get('/api/repos/:repositoryId/*',
-  ({params: {repositoryId, 0: path}}, res) => {
+  ({params: {repositoryId, 0: path}}: IParams<IWithRepositoryId & IWithPath>, res: Response) => {
     console.log(`git ls-tree HEAD ${path ? path + '/' : ''}`);
     return execCommandWithRes(
       `cd ${PATH_TO_REPOS}/${repositoryId} &&
             git ls-tree HEAD ${path ? path : ''}`,
       res,
-      out => arrayFromOut(out)
-        .map(str => {
+      (out: string) => arrayFromOut(out)
+        .map((str: string) => {
             const arr = str.replace('	', ' ').split(' ');
             const name = arr[3].replace(path, '');
             const fileType =
@@ -141,7 +156,7 @@ app.get('/api/repos/:repositoryId/*',
 // DELETE /api/repos/:repositoryId
 // Безвозвратно удаляет репозиторий
 app.delete('/api/repos/:repositoryId',
-  ({params: {repositoryId}}, res) =>
+  ({params: {repositoryId}}: IParams<IWithRepositoryId>, res: Response) =>
     execCommandWithRes(
       `rm -rf ${PATH_TO_REPOS}/${repositoryId} &&
             echo '${createMessageObjectString(MESSAGE.REPOSITORY_DELETED)}'`,
@@ -153,7 +168,7 @@ app.delete('/api/repos/:repositoryId',
 // POST /api/repos/:repositoryId + { url: ‘repo-url’ }
 // Добавляет репозиторий в список, скачивает его по переданной в теле запроса ссылке и добавляет в папку со всеми репозиториями c названием :repositoryId.
 app.post('/api/repos/:repositoryId',
-  ({params: {repositoryId}, body: {url}}, res) => {
+  ({params: {repositoryId}, body: {url}}: IParams<IWithRepositoryId> & IBody<IWithUrl>, res: Response) => {
     console.log(repositoryId, url);
     execCommandWithRes(
       `cd ${PATH_TO_REPOS} &&
@@ -169,7 +184,7 @@ app.post('/api/repos/:repositoryId',
 // POST /api/repos + { url: ‘repo-url’ }
 // Добавляет репозиторий в список, скачивает его по переданной в теле запроса ссылке и добавляет в папку со всеми репозиториями.
 app.post('/api/repos',
-  ({body: {url}}, res) =>
+  ({body: {url}}: IBody<IWithUrl>, res: Response) =>
     execCommandWithRes(
       `cd ${PATH_TO_REPOS} &&
                 git clone ${url.replace(/https?(:\/\/)/, 'git$1')} && 
@@ -182,7 +197,7 @@ app.post('/api/repos',
 
 // Подсчета символов в репозитории, возвращает объект, в котором ключ - это символ, а значение - количество таких символов в репозитории. Во время запроса, сервер должен работать - то есть отвечать на другие запросы.
 app.get('/api/repos/:repositoryId/count',
-  ({params: {repositoryId}}, res) =>
+  ({params: {repositoryId}}: IParams<IWithRepositoryId>, res: Response) =>
     execCommandWithRes(
       `mkdir -p ${PATH_TO_BACKUP} &&
             mkdir -p ${PATH_TO_BACKUP}/${repositoryId} &&

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "tsc && node build/index.ts",
     "test": "node src/index.test.js",
     "tsc": "tsc"
   },
