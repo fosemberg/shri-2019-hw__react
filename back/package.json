@@ -1,10 +1,10 @@
 {
   "name": "nodejs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "tsc && node build/index.js",
-    "test": "node src/index.test.js",
+    "test": "tsc && node build/index.test.js",
     "tsc": "tsc"
   },
   "dependencies": {
