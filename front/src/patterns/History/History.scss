@@ -4,13 +4,4 @@
   font-size: var(--font-m);
   font-family: var(--font);
   line-height: var(--line-m);
-
-  &:before {
-    position: absolute;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    background-image: url('history.svg');
-    content: '';
-  }
 }
