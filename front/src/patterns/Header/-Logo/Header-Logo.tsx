@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnHeaderLogo, IHeaderLogo} from "./index";
 import './Header-Logo.scss';
+import { cnHeaderLogo, IHeaderLogo } from './index';
 
-const HeaderLogo: React.FC<IHeaderLogo> = ({className, children}) => (
+const HeaderLogo: React.FC<IHeaderLogo> = ({ className, children }) => (
   <div className={cnHeaderLogo({}, [className])}>{children}</div>
 );
 

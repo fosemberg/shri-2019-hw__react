@@ -1,12 +1,12 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import MainPage from '../../pages/MainPage/MainPage';
+import getData from '../../store/getData';
 import './App.scss';
-import {BrowserRouter} from 'react-router-dom';
-import MainPage from "../../pages/MainPage/MainPage";
-import getData from "../../store/getData";
 
 const App = () => (
   <BrowserRouter>
-    <MainPage getData={getData}/>
+    <MainPage getData={getData} />
   </BrowserRouter>
 );
 

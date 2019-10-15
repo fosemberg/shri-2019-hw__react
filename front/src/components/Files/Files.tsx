@@ -1,11 +1,11 @@
-import React from "react";
-import TableHead from "../TableHead/TableHead";
-import FilesContent from "./-Content/FilesContent";
-import Table from "../../patterns/Table/Table";
-import {IFile} from "../../utils/types";
+import React from 'react';
+import Table from '../../patterns/Table/Table';
+import { IFile } from '../../utils/types';
+import TableHead from '../TableHead/TableHead';
+import FilesContent from './-Content/FilesContent';
 
 interface IData {
-    data: IFile[];
+  data: IFile[];
 }
 
 const headerNames: string[] = [
@@ -16,11 +16,11 @@ const headerNames: string[] = [
   'Updated',
 ];
 
-const Files: React.FC<IData> = ({data}) => (
+const Files: React.FC<IData> = ({ data }) => (
   <Table>
-    <TableHead names={headerNames}/>
+    <TableHead names={headerNames} />
     <tbody>
-    <FilesContent data={data}/>
+      <FilesContent data={data} />
     </tbody>
   </Table>
 );

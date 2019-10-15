@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnSelect, ISelect} from "./index";
+import { cnSelect, ISelect } from './index';
 import './Select.scss';
 
-const Select: React.FC<ISelect> = ({className, children}) => (
+const Select: React.FC<ISelect> = ({ className, children }) => (
   <div className={cnSelect({}, [className])}>{children}</div>
 );
 

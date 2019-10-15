@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnEditorRow, IEditorRow} from "./index";
 import './Editor-Row.scss';
+import { cnEditorRow, IEditorRow } from './index';
 
-const EditorRow: React.FC<IEditorRow> = ({className, children}) => (
+const EditorRow: React.FC<IEditorRow> = ({ className, children }) => (
   <tr className={cnEditorRow({}, [className])}>{children}</tr>
 );
 

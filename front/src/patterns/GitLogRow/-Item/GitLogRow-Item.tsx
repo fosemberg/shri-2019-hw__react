@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnGitLogRowItem, IGitLogRowItem} from "./index";
 import './GitLogRow-Item.scss';
+import { cnGitLogRowItem, IGitLogRowItem } from './index';
 
-const GitLogRowItem: React.FC<IGitLogRowItem> = ({className, children}) => (
+const GitLogRowItem: React.FC<IGitLogRowItem> = ({ className, children }) => (
   <div className={cnGitLogRowItem({}, [className])}>{children}</div>
 );
 

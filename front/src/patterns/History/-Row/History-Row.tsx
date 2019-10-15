@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnHistoryRow, IHistoryRow} from "./index";
 import './History-Row.scss';
+import { cnHistoryRow, IHistoryRow } from './index';
 
-const HistoryRow: React.FC<IHistoryRow> = ({className, children}) => (
+const HistoryRow: React.FC<IHistoryRow> = ({ className, children }) => (
   <div className={cnHistoryRow({}, [className])}>{children}</div>
 );
 

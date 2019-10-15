@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnHistory, IHistory} from "./index";
 import './History.scss';
+import { cnHistory, IHistory } from './index';
 
-const History: React.FC<IHistory> = ({className, children}) => (
+const History: React.FC<IHistory> = ({ className, children }) => (
   <div className={cnHistory({}, [className])}>{children}</div>
 );
 

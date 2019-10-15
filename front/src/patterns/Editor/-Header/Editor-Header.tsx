@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnEditorHeader, IEditorHeader} from "./index";
 import './Editor-Header.scss';
+import { cnEditorHeader, IEditorHeader } from './index';
 
-const EditorHeader: React.FC<IEditorHeader> = ({className, children}) => (
+const EditorHeader: React.FC<IEditorHeader> = ({ className, children }) => (
   <div className={cnEditorHeader({}, [className])}>{children}</div>
 );
 

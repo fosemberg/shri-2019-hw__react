@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnArrow, IArrow} from "./index";
 import './Arrow.scss';
+import { cnArrow, IArrow } from './index';
 
-const Arrow: React.FC<IArrow> = ({className, children}) => (
+const Arrow: React.FC<IArrow> = ({ className, children }) => (
   <div className={cnArrow({}, [className])}>{children}</div>
 );
 

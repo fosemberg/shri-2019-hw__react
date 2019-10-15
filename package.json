@@ -25,11 +25,19 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-order": "^3.1.1",
     "stylelint-prettier": "^1.1.1",
-    "stylelint-scss": "^3.8.0"
+    "stylelint-scss": "^3.8.0",
+    "tslint": "^5.20.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.3",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "stylelint_all": "stylelint --fix front/src/**/*.scss",
-    "eslint_all": "eslint --fix front/src/**/*.js"
+    "eslint_all": "eslint --fix back/src/**/*.js && eslint --fix front/src/**/*.js",
+    "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*"
   },
   "lint-staged": {
     "*.scss": [
@@ -38,6 +46,10 @@
     ],
     "*.js": [
       "eslint --fix",
+      "git add"
+    ],
+    "*.ts*": [
+      "tslint --fix",
       "git add"
     ]
   },

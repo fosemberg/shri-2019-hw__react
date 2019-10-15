@@ -1,7 +1,3 @@
-export const createMessageObject = (str: string) => ({message: str});
-export const createMessageObjectString = (str: string) => JSON.stringify(createMessageObject(str));
-
-// module.exports = {
-//     createMessageObject,
-//     createMessageObjectString
-// };
+export const createMessageObject = (str: string) => ({ message: str });
+export const createMessageObjectString = (str: string) =>
+  JSON.stringify(createMessageObject(str));

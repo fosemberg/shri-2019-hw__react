@@ -1,8 +1,11 @@
 import React from 'react';
-import {cnEditorHeaderParagraph, IEditorHeaderParagraph} from "./index";
 import './Editor-HeaderParagraph.scss';
+import { cnEditorHeaderParagraph, IEditorHeaderParagraph } from './index';
 
-const EditorHeaderParagraph: React.FC<IEditorHeaderParagraph> = ({className, children}) => (
+const EditorHeaderParagraph: React.FC<IEditorHeaderParagraph> = ({
+  className,
+  children,
+}) => (
   <div className={cnEditorHeaderParagraph({}, [className])}>{children}</div>
 );
 

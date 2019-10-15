@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnFile, IFile} from "./index";
 import './File.scss';
+import { cnFile, IFile } from './index';
 
-const File: React.FC<IFile> = ({className, children}) => (
+const File: React.FC<IFile> = ({ className, children }) => (
   <div className={cnFile({}, [className])}>{children}</div>
 );
 

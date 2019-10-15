@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnHeader, IHeader} from "./index";
 import './Header.scss';
+import { cnHeader, IHeader } from './index';
 
-const Header: React.FC<IHeader> = ({className, children}) => (
+const Header: React.FC<IHeader> = ({ className, children }) => (
   <div className={cnHeader({}, [className])}>{children}</div>
 );
 

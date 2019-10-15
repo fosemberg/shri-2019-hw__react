@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnFileIcon, IFileIcon} from "./index";
 import './File-Icon.scss';
+import { cnFileIcon, IFileIcon } from './index';
 
-const FileIcon: React.FC<IFileIcon> = ({className, children}) => (
+const FileIcon: React.FC<IFileIcon> = ({ className, children }) => (
   <div className={cnFileIcon({}, [className])}>{children}</div>
 );
 

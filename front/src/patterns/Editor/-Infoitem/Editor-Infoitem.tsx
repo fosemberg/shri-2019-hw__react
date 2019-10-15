@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnEditorInfoitem, IEditorInfoitem} from "./index";
 import './Editor-Infoitem.scss';
+import { cnEditorInfoitem, IEditorInfoitem } from './index';
 
-const EditorInfoitem: React.FC<IEditorInfoitem> = ({className, children}) => (
+const EditorInfoitem: React.FC<IEditorInfoitem> = ({ className, children }) => (
   <div className={cnEditorInfoitem({}, [className])}>{children}</div>
 );
 

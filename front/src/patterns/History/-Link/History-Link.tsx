@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnHistoryLink, IHistoryLink} from "./index";
 import './History-Link.scss';
+import { cnHistoryLink, IHistoryLink } from './index';
 
-const HistoryLink: React.FC<IHistoryLink> = ({className, children}) => (
+const HistoryLink: React.FC<IHistoryLink> = ({ className, children }) => (
   <div className={cnHistoryLink({}, [className])}>{children}</div>
 );
 

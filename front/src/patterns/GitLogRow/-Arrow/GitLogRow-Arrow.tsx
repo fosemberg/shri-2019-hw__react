@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnGitLogRowArrow, IGitLogRowArrow} from "./index";
 import './GitLogRow-Arrow.scss';
+import { cnGitLogRowArrow, IGitLogRowArrow } from './index';
 
-const GitLogRowArrow: React.FC<IGitLogRowArrow> = ({className, children}) => (
+const GitLogRowArrow: React.FC<IGitLogRowArrow> = ({ className, children }) => (
   <div className={cnGitLogRowArrow({}, [className])}>{children}</div>
 );
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnDiffInfoDiff, IDiffInfoDiff} from "./index";
 import './DiffInfo-Diff.scss';
+import { cnDiffInfoDiff, IDiffInfoDiff } from './index';
 
-const DiffInfoDiff: React.FC<IDiffInfoDiff> = ({className, children}) => (
+const DiffInfoDiff: React.FC<IDiffInfoDiff> = ({ className, children }) => (
   <div className={cnDiffInfoDiff({}, [className])}>{children}</div>
 );
 

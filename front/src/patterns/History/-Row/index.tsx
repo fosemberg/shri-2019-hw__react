@@ -1,8 +1,6 @@
+import { cn } from '@bem-react/classname';
 import { IClassNameProps } from '@bem-react/core';
-import {cn} from "@bem-react/classname";
 
-export interface IHistoryRow extends IClassNameProps {
-
-}
+export interface IHistoryRow extends IClassNameProps {}
 
 export const cnHistoryRow = cn('History-Row');

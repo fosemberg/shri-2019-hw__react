@@ -23,7 +23,7 @@ export interface IWithCommitHash {
 }
 
 export interface IWithPageSize {
-  pageSize: string
+  pageSize: string;
 }
 
 export interface IWithPageNumber {

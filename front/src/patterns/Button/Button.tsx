@@ -1,8 +1,8 @@
 import React from 'react';
-import {cnButton, IButton} from "./index";
 import './Button.scss';
+import { cnButton, IButton } from './index';
 
-const Button: React.FC<IButton> = ({className, children}) => (
+const Button: React.FC<IButton> = ({ className, children }) => (
   <div className={cnButton({}, [className])}>{children}</div>
 );
 
