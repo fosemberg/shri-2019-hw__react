@@ -4,6 +4,7 @@
   "description": "Проект создан исключительно в обучающих целях. Основная задача: повторить функциональность внутреннего проекта yandex: Arcanum.",
   "main": "index.tsx",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-jest-enzyme": "^7.1.1",
@@ -16,9 +17,12 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.1.2",
+    "hermione": "^2.13.1",
+    "html-reporter": "^5.3.0",
     "husky": "^2.1.0",
     "lint-staged": "^6.1.1",
     "prettier": "^1.18.2",
+    "selenium-standalone": "^6.16.0",
     "stylelint": "^11.0.0",
     "stylelint-config-airbnb": "^0.0.0",
     "stylelint-config-prettier": "^5.2.0",
@@ -37,7 +41,8 @@
   "scripts": {
     "stylelint_all": "stylelint --fix front/src/**/*.scss",
     "eslint_all": "eslint --fix back/src/**/*.js && eslint --fix front/src/**/*.js",
-    "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*"
+    "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*",
+    "test": "node_modules/.bin/hermione"
   },
   "lint-staged": {
     "*.scss": [
@@ -55,7 +60,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
     }
   },
   "repository": {

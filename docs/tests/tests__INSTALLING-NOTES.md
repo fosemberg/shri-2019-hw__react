@@ -1,7 +1,7 @@
-как завести на windows:
+// windows:
 https://github.com/gemini-testing/hermione/issues/258
 
-что нужно для старта:
+// :
 https://github.com/gemini-testing/hermione#prerequisites
 
 // install jdk
