@@ -43,9 +43,9 @@
     "stylelint_all": "stylelint --fix front/src/**/*.scss",
     "eslint_all": "eslint --fix back/src/**/*.js && eslint --fix front/src/**/*.js",
     "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*",
-    "test": "node_modules/.bin/hermione",
+    "test-prepare": "selenium-standalone install && selenium-standalone start",
     "test-gui": "node_modules/.bin/hermione gui",
-    "test-prepare": "selenium-standalone install && selenium-standalone start"
+    "test": "node_modules/.bin/hermione"
   },
   "lint-staged": {
     "*.scss": [
