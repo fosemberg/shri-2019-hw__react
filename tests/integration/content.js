@@ -1,21 +1,30 @@
 const assert = require('chai').assert;
 
 describe('Содержимое компонентов', function() {
+  const repositoriesUrl = '/';
+  const repositoriesContent = '.Layout-Container';
+
+  const filesUrl = '/server-info';
+  const filesContent = '.Table';
+
+  const fileUrl = '/server-info/.gitignore';
+  const fileContent = '.Editor';
+
   it('Репозитории', function() {
     return this.browser
-      .url('/')
-      .assertView('repositories__content', '.Layout-Container')
+      .url(repositoriesUrl)
+      .assertView('repositories__content', repositoriesContent)
   });
 
   it('Файловая системы', function() {
     return this.browser
-      .url('/server-info')
-      .assertView('files__content', '.Table')
+      .url(filesUrl)
+      .assertView('files__content', filesContent)
   });
 
   it('Файл', function() {
     return this.browser
-      .url('/server-info/.gitignore')
-      .assertView('file__content', '.Editor')
+      .url(fileUrl)
+      .assertView('file__content', fileContent)
   });
 });
