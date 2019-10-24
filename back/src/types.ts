@@ -34,6 +34,10 @@ export interface IWithPath {
   0: string;
 }
 
+export interface IWithMessage {
+  message: string;
+}
+
 export interface IFile {
   num: string;
   fileType: string;

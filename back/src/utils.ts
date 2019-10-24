@@ -32,7 +32,7 @@ export const arrayFromOut = (out: string): string[] =>
   out.split('\n').slice(0, -1);
 
 export const getPage = (
-  array: string[],
-  pageSize: number = array.length,
+  pages: string[],
+  pageSize: number = pages.length,
   pageNumber: number = 1
-) => array.splice((pageNumber - 1) * pageSize, pageSize);
+): string[] => [...pages].splice((pageNumber - 1) * pageSize, pageSize);

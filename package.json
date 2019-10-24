@@ -5,6 +5,7 @@
   "main": "index.tsx",
   "devDependencies": {
     "@types/chai": "^4.2.4",
+    "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
@@ -22,6 +23,7 @@
     "html-reporter": "^5.3.0",
     "husky": "^2.1.0",
     "lint-staged": "^6.1.1",
+    "mocha": "^6.2.2",
     "prettier": "^1.18.2",
     "selenium-standalone": "^6.16.0",
     "stylelint": "^11.0.0",
@@ -31,6 +33,7 @@
     "stylelint-order": "^3.1.1",
     "stylelint-prettier": "^1.1.1",
     "stylelint-scss": "^3.8.0",
+    "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
@@ -45,7 +48,8 @@
     "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*",
     "test__int_prepare": "selenium-standalone install && selenium-standalone start",
     "test__int_gui": "node_modules/.bin/hermione gui",
-    "test__int": "node_modules/.bin/hermione"
+    "test__int": "node_modules/.bin/hermione",
+    "test__unit": "mocha -r ts-node/register tests/unit/*.test.ts"
   },
   "lint-staged": {
     "*.scss": [
