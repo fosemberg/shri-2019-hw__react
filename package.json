@@ -43,13 +43,13 @@
     "typescript": "^3.6.4"
   },
   "scripts": {
-    "stylelint_all": "stylelint --fix front/src/**/*.scss",
-    "eslint_all": "eslint --fix back/src/**/*.js && eslint --fix front/src/**/*.js",
-    "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*",
     "test__int_prepare": "selenium-standalone install && selenium-standalone start",
     "test__int_gui": "node_modules/.bin/hermione gui",
     "test__int": "node_modules/.bin/hermione",
-    "test__unit": "mocha -r ts-node/register tests/unit/*.test.ts"
+    "test__unit": "mocha -r ts-node/register tests/unit/*.test.ts",
+    "stylelint_all": "stylelint --fix front/src/**/*.scss",
+    "eslint_all": "eslint --fix back/src/**/*.js && eslint --fix front/src/**/*.js",
+    "tslint_all": "tslint --fix -c ./tslint.json back/src/**/*.ts* && tslint --fix -c ./tslint.json front/src/**/*.ts*"
   },
   "lint-staged": {
     "*.scss": [
