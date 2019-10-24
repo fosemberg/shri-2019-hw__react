@@ -3,7 +3,7 @@ module.exports = {
   gridUrl: 'http://localhost:4444/wd/hub', // here selenium
   sets: {
     desktop: {
-      files: 'tests/desktop'
+      files: 'tests/integration'
     }
   },
 
