@@ -43,6 +43,7 @@
     "typescript": "^3.6.4"
   },
   "scripts": {
+    "selenium_start": "selenium-standalone start",
     "test__int_prepare": "selenium-standalone install && selenium-standalone start",
     "test__int_gui": "node_modules/.bin/hermione gui",
     "test__int": "node_modules/.bin/hermione",

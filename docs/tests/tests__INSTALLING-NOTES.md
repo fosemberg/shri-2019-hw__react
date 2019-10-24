@@ -25,3 +25,11 @@ sudo dpkg -i google-chrome-beta_current_amd64.deb
 // install and start selenium
 selenium-standalone install
 selenium-standalone start
+
+
+В итоге, как работает из под винды:
+- yarn - wsl
+- back - wsl
+- front - windows
+- selenium - windows
+- hermione - wsl
