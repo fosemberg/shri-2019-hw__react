@@ -24,4 +24,16 @@ describe('Переходы по страницам', function() {
       .click('[href="/server-info/.gitignore"]')
       .assertView('after_open_file', 'body')
   });
+
+  it('Переходы по хлебным крошкам', function() {
+    return this.browser
+      .url('/server-info/src/components/Navbar')
+      .assertView('BreadCrumbs_server-info_src_components_Navbar', '.BreadCrumbs')
+      .click('[href="/server-info/src/components"]')
+      .assertView('BreadCrumbs_server-info_src_components', '.BreadCrumbs')
+      .click('[href="/server-info/src"]')
+      .assertView('BreadCrumbs_server-info_src', '.BreadCrumbs')
+      .click('[href="/server-info"]')
+      .assertView('BreadCrumbs_server-info', '.BreadCrumbs')
+  });
 });
