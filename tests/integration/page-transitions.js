@@ -9,6 +9,14 @@ describe('Переходы по страницам', function() {
       .assertView('after_open_repository', 'body')
   });
 
+  it('Из списка файлов во вложенную папку', function() {
+    return this.browser
+      .url('/server-info')
+      .assertView('before_open_folder', 'body')
+      .click('[href="/server-info/src"]')
+      .assertView('after_open_folder', 'body')
+  });
+
   it('Из списка файлов на страницу отдельного файла', function() {
     return this.browser
       .url('/server-info')
