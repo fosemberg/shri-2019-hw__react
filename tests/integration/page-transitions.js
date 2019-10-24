@@ -27,13 +27,19 @@ describe('Переходы по страницам', function() {
 
   it('Переходы по хлебным крошкам', function() {
     return this.browser
-      .url('/server-info/src/components/Navbar')
-      .assertView('BreadCrumbs_server-info_src_components_Navbar', '.BreadCrumbs')
-      .click('[href="/server-info/src/components"]')
-      .assertView('BreadCrumbs_server-info_src_components', '.BreadCrumbs')
+      .url('/server-info')
+      .assertView('BreadCrumbs__forward_server-info', '.BreadCrumbs')
       .click('[href="/server-info/src"]')
-      .assertView('BreadCrumbs_server-info_src', '.BreadCrumbs')
+      .assertView('BreadCrumbs__forward_server-info_src', '.BreadCrumbs')
+      .click('[href="/server-info/src/components"]')
+      .assertView('BreadCrumbs__forward_server-info_src_components', '.BreadCrumbs')
+      .click('[href="/server-info/src/components/Navbar"]')
+      .assertView('BreadCrumbs__forward_server-info_src_components_Navbar', '.BreadCrumbs')
+      .click('[href="/server-info/src/components"]')
+      .assertView('BreadCrumbs__back_server-info_src_components', '.BreadCrumbs')
+      .click('[href="/server-info/src"]')
+      .assertView('BreadCrumbs__back_server-info_src', '.BreadCrumbs')
       .click('[href="/server-info"]')
-      .assertView('BreadCrumbs_server-info', '.BreadCrumbs')
+      .assertView('BreadCrumbs__back_server-info', '.BreadCrumbs')
   });
 });
